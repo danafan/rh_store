@@ -1,0 +1,83 @@
+<!--index.wxml-->
+<view>
+  <!-- 顶部标题栏 -->
+  <view class="navgation_box">
+    <view class='startBar' style='height:{{startBarHeight}}px'></view>
+    <!-- 标题 -->
+    <view class="title_text" style="height:{{navgationHeight}}px">盛宴海鲜自助餐厅</view>
+  </view>
+  <!-- 扫码模块 -->
+  <view class="index_top" style='margin-top:{{startBarHeight + navgationHeight}}px'>
+    <view class="validation_item">
+      <image class="validation_icon" src="../../images/keyboard_icon.png"></image>
+      <view class="validation_text">输码核销</view>
+    </view>
+    <view class="validation_item">
+      <image class="validation_icon" src="../../images/scan_code.png"></image>
+      <view class="validation_text">扫码核销</view>
+    </view>
+    <view class="validation_item">
+      <image class="validation_icon" src="../../images/record_icon.png"></image>
+      <view class="validation_text">核销记录</view>
+    </view>
+  </view>
+  <!-- 下面数据 -->
+  <view class="content_box">
+    <!-- 经营数据 -->
+    <view class="data_box">
+      <view class="data_title">经营数据</view>
+      <view class="date_type_box">
+        <view class="date_item {{item.id == active_type_id?'active_date_item':''}}" wx:for="{{date_type_list}}" wx:key="id" data-id="{{item.id}}" bindtap="checkType">{{item.name}}</view>
+      </view>
+      <view class="data_content">
+        <view class="data_item">
+          <view class="data_label">总收益</view>
+          <view class="data_number">805.45</view>
+        </view>
+         <view class="data_item">
+          <view class="data_label">核销金额</view>
+          <view class="data_number">982.32</view>
+        </view>
+        <view class="data_item">
+          <view class="data_label">核销单量</view>
+          <view class="data_number">12</view>
+        </view>
+        <view class="data_item">
+          <view class="data_label">下单金额</view>
+          <view class="data_number">389.00</view>
+        </view>
+        <view class="data_item">
+          <view class="data_label">下单数量</view>
+          <view class="data_number">3</view>
+        </view>
+        <view class="data_item">
+          <view class="data_label">申请退款</view>
+          <view class="data_number">0</view>
+        </view>
+      </view>
+    </view>
+    <!-- 套餐分析 -->
+    <view class="data_box">
+      <view class="data_title">商品分析</view>
+      <view class="toast">默认按照销量排序</view>
+      <view class="package_box">
+        <view class="header">
+          <view class="name">商品名称</view>
+          <view class="sales">销量</view>
+          <view class="sales">销售额</view>
+        </view>
+        <view class="row">
+          <view class="name">老坛酸菜鱼+1份米饭套餐1份米饭套餐</view>
+          <view class="sales">12</view>
+          <view class="sales">358</view>
+        </view>
+        <view class="row">
+          <view class="name">老坛酸菜鱼+1份米饭</view>
+          <view class="sales">12</view>
+          <view class="sales">358</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+</view>

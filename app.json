@@ -1,0 +1,48 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/my/my",
+    "pages/evaluation/evaluation",
+    "pages/preferential/preferential",
+    "pages/order/order"
+  ],
+  "tabBar": {
+    "color": "#8a8a8a",
+    "selectedColor": "#ec722e",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/images/index.png",
+        "selectedIconPath": "/images/index_active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "/images/preferential.png",
+        "selectedIconPath": "/images/preferential_active.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/evaluation/evaluation",
+        "iconPath": "/images/evaluation.png",
+        "selectedIconPath": "/images/evaluation_active.png",
+        "text": "评价"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "/images/my.png",
+        "selectedIconPath": "/images/my_active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#0b0d1d",
+    "navigationBarTextStyle": "white",
+    "backgroundTextStyle": "light",
+    "navigationBarTitleText": "热乎管家"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}
