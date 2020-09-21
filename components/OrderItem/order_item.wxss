@@ -1,0 +1,103 @@
+/* components/OrderItem/order_item.wxss */
+
+.order_item {
+  border-radius: 10rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 10rpx;
+  width: 100%;
+}
+
+/* 顶部店铺信息 */
+
+.item_top {
+  border-bottom: 2rpx solid #e6e6e6;
+  padding-bottom: 10rpx;
+  padding-right: 20rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.store_info {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.store_icon {
+  margin-right: 15rpx;
+  border-radius: 50%;
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.store_name {
+  flex: 1;
+  font-size: 28rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+
+.order_status {
+  width: 150rpx;
+  text-align: end;
+  font-size: 26rpx;
+  color: #0b0d1d;
+}
+
+/* 中间套餐信息 */
+
+.center_box {
+  border-bottom: 1rpx dashed #e6e6e6;
+  padding-bottom: 10rpx;
+  margin-top: 10rpx;
+  width: 100%;
+  display: flex;
+}
+
+.preferential_icon {
+  border-radius: 8rpx;
+  width: 120rpx;
+  height: 120rpx;
+}
+
+.center_info {
+  flex: 1;
+  margin-left: 15rpx;
+}
+.preferential_name {
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+
+.info_item {
+  margin-bottom: 5rpx;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+.money_active{
+  font-size: 28rpx;
+  color: #ec722e;
+  font-weight: 700;
+}
+/* 底部操作栏 */
+
+.bottom_box {
+  margin-top: 10rpx;
+  width: 100%;
+  height: 56rpx;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.bottom_toast {
+  position: absolute;
+  left: 0;
+  font-size: 26rpx;
+  color: #ec722e;
+}

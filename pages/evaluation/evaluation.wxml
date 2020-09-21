@@ -1,2 +1,5 @@
 <!--pages/evaluation/evaluation.wxml-->
-<text>pages/evaluation/evaluation.wxml</text>
+<view class="comment_box">
+  <comment_item/>
+  <comment_item/>
+</view>

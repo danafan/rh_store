@@ -1,0 +1,49 @@
+<!--components/CommentItem/comment_item.wxml-->
+<view class="comment_box">
+  <image class="user_icon" mode="aspectFill" src="{{comment_info.user_img}}"></image>
+  <view class="user_info">
+    <view class="user_content">
+      <view class="content_top">
+        <view class="user_name">{{comment_info.user_name}}</view>
+        <view class="create_time">{{comment_info.create_time}}</view>
+      </view>
+      <view class="star_list">
+        <image class="hot_icon" src="../../images/hot_icon.png" wx:for="{{comment_info.star_num}}" wx:key="*this"></image>
+      </view>
+    </view>
+    <view class="comment_info">{{comment_info.content}}</view>
+    <view class="comment_imgs">
+      <image class="comment_img" mode="aspectFill" src="{{item}}" wx:for="{{comment_info.imgs}}" wx:key="*this" data-index="{{index}}" bindtap="openBigImg"></image>
+    </view>
+    <!-- 消费套餐 -->
+    <view class="package_box">
+      <view class="package_con">
+        <view class="package_name">好得火锅2人烤鱼套餐好得火锅2人烤鱼套餐</view>
+        <view class="number">x1</view>
+      </view>
+    </view>
+    <!-- 商家回复 -->
+    <view class="reply_box">
+      <text class="reply_those">商家回复：</text>
+      <text class="reply_text">感谢您的支持！江巴人全体员工欢迎您再次光临</text>
+    </view>
+    <!-- 底部操作按钮 -->
+    <view class="setting_box">
+      <view class="complaint_box">
+        <image class="complaint_icon" src="../../images/complaint_icon.png"></image>
+        <view class="complaint_text">申诉</view>
+      </view>
+      <view class="reply_but" bindtap="openReply">回复</view>
+    </view>
+  </view>
+  <!-- 回复弹框 -->
+  <view class="reply_back" wx:if="{{show_input}}">
+    <view class="reply_input">
+      <textarea class="input_box" fixed="true" value="{{reply_content}}" show-confirm-bar="{{false}}" cursor-spacing="180" placeholder="您的回复会被公开展示，请注意措辞，最多140字..." bindinput="changeInput" auto-focus />
+      <view class="but_botttom">
+        <view class="submit_reply">回复</view>
+      </view>
+    </view>
+  </view>
+  <big_img big_imgs="{{comment_info.imgs}}" current_index="{{current_index}}" wx:if="{{show_big_img}}" bind:onEmit="close" />
+</view>

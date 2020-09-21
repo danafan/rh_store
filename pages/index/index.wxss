@@ -1,5 +1,6 @@
 /**index.wxss**/
-.navgation_box{
+
+.navgation_box {
   background: #0b0d1d;
   position: fixed;
   top: 0;
@@ -7,6 +8,7 @@
   width: 100%;
   z-index: 2;
 }
+
 .title_text {
   padding-left: 15rpx;
   width: 100%;
@@ -16,8 +18,10 @@
   color: #fff;
   font-weight: 700rpx;
 }
+
 /* 顶部核销模块 */
-.index_top{
+
+.index_top {
   background: #0b0d1d;
   height: 200rpx;
   width: 100%;
@@ -25,53 +29,54 @@
   align-items: center;
   justify-content: space-around;
 }
-.validation_item{
+
+.validation_item {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.validation_icon{
+
+.validation_icon {
   margin-bottom: 10rpx;
   width: 58rpx;
   height: 58rpx;
 }
-.validation_text{
+
+.validation_text {
   font-size: 28rpx;
   color: #fff;
 }
-/* 经营数据 */
-.content_box{
+
+/* 下面内容 */
+
+.content_box {
   padding: 15rpx;
 }
-/* 经营数据 */
-.data_box{
-  margin-bottom: 15rpx;
-  padding: 20rpx;
+
+/* 内容模块 */
+
+.data_box {
+  padding: 30rpx 20rpx;
   border-radius: 10rpx;
   background: #fff;
 }
-/* 标题 */
-.data_title{
-  font-size: 32rpx;
-  color: #0b0d1d;
-  font-weight: 700;
+/* 顶部时间切换 */
+.check_date_box {
+  border-bottom: 1rpx solid #f6f6f6;
+  padding-bottom: 30rpx;
 }
-.toast{
-  margin-top: 20rpx;
-  margin-bottom: 20rpx;
-  font-size: 26rpx;
-  color: #8a8a8a;
-}
+
 /* 时间范围选择 */
-.date_type_box{
-  margin-top: 20rpx;
+
+.date_type_box {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.date_item{
+
+.date_item {
   border-radius: 8rpx;
-  background: #F1F6F9;
+  background: #f1f6f9;
   width: 140rpx;
   text-align: center;
   height: 56rpx;
@@ -79,13 +84,70 @@
   font-size: 26rpx;
   color: #0b0d1d;
 }
-.active_date_item{
+
+.active_date_item {
   background: #ec722e;
   color: #fff;
   font-weight: 700;
 }
 
-.data_content{
+/* 自定义时间框 */
+
+.check_picker {
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.time_box {
+  display: flex;
+  align-items: center;
+}
+
+.time_val {
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+
+.down_icon {
+  margin-left: 8rpx;
+  transform: rotate(90deg);
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.to_box {
+  border: 1rpx solid #8a8a8a;
+  border-radius: 25rpx;
+  width: 80rpx;
+  text-align: center;
+  height: 42rpx;
+  line-height: 42rpx;
+  font-size: 26rpx;
+  color: #0b0d1d;
+}
+
+/* 标题 */
+
+.data_title {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+
+.toast {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+/* 经营数据 */
+
+.data_content {
+  border-bottom: 1rpx solid #f6f6f6;
+  padding-bottom: 30rpx;
   width: 100%;
   display: flex;
   align-items: center;
@@ -93,49 +155,57 @@
   flex-wrap: wrap;
 }
 
-.data_item{
+.data_item {
   margin-top: 30rpx;
-  padding-left: 30rpx;
+  padding-left: 50rpx;
   width: 32%;
 }
-.data_number{
-  margin-top:5rpx;
+
+.data_number {
+  margin-top: 5rpx;
   font-size: 46rpx;
   font-weight: 700;
   color: #ec722e;
 }
-.data_label{
+
+.data_label {
   font-size: 26rpx;
   color: #0b0d1d;
 }
+
 /* 商品分析 */
-.package_box{
-  border: 1rpx solid #F0F0F0;
+
+.package_box {
+  margin-top: 30rpx;
+  border: 1rpx solid #f0f0f0;
 }
 
-.header{
-  background: #F9F9F9;
+.header {
+  background: #f9f9f9;
   color: #0b0d1d;
   display: flex;
   font-size: 28rpx;
   font-weight: 700;
-  height: 90rpx;
+  height: 80rpx;
 }
-.row{
-  border-top: 1rpx solid #F0F0F0;
+
+.row {
+  border-top: 1rpx solid #f0f0f0;
   display: flex;
   font-size: 28rpx;
   color: #333;
   height: 120rpx;
 }
-.name{
+
+.name {
   width: 50%;
   height: 100%;
   display: flex;
   align-items: center;
   padding: 0 20rpx;
 }
-.sales{
+
+.sales {
   width: 25%;
   height: 100%;
   display: flex;

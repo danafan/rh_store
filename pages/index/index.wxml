@@ -23,18 +23,40 @@
   </view>
   <!-- 下面数据 -->
   <view class="content_box">
-    <!-- 经营数据 -->
     <view class="data_box">
-      <view class="data_title">经营数据</view>
-      <view class="date_type_box">
-        <view class="date_item {{item.id == active_type_id?'active_date_item':''}}" wx:for="{{date_type_list}}" wx:key="id" data-id="{{item.id}}" bindtap="checkType">{{item.name}}</view>
+      <!-- 顶部切换时间 -->
+      <view class="check_date_box">
+        <!-- 选择时间范围 -->
+        <view class="date_type_box">
+          <view class="date_item {{item.id == active_type_id?'active_date_item':''}}" wx:for="{{date_type_list}}" wx:key="id" data-id="{{item.id}}" bindtap="checkType">{{item.name}}</view>
+        </view>
+        <!-- 自定义时间框 -->
+        <view class="check_picker" wx:if="{{active_type_id == '4'}}">
+          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="start" bindchange="bindDateChange">
+            <view class="time_box">
+              <view class="time_val">{{start_time}}</view>
+              <image class="down_icon" src="../../images/right.png"></image>
+            </view>
+          </picker>
+          <view class="to_box">至</view>
+          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="end" bindchange="bindDateChange">
+            <view class="time_box">
+              <view class="time_val">{{end_time}}</view>
+              <image class="down_icon" src="../../images/right.png"></image>
+            </view>
+          </picker>
+        </view>
       </view>
+      <!-- 经营数据 -->
+      <view class="data_title">经营数据</view>
+      <view class="toast">总收益 = 核销金额 * 90%</view>
+      <!-- 经营数据内容 -->
       <view class="data_content">
         <view class="data_item">
           <view class="data_label">总收益</view>
           <view class="data_number">805.45</view>
         </view>
-         <view class="data_item">
+        <view class="data_item">
           <view class="data_label">核销金额</view>
           <view class="data_number">982.32</view>
         </view>
@@ -55,11 +77,9 @@
           <view class="data_number">0</view>
         </view>
       </view>
-    </view>
-    <!-- 套餐分析 -->
-    <view class="data_box">
+      <!-- 套餐分析 -->
       <view class="data_title">商品分析</view>
-      <view class="toast">默认按照销量排序</view>
+      <view class="toast">上架套餐按销量从高到低排序</view>
       <view class="package_box">
         <view class="header">
           <view class="name">商品名称</view>
@@ -69,12 +89,12 @@
         <view class="row">
           <view class="name">老坛酸菜鱼+1份米饭套餐1份米饭套餐</view>
           <view class="sales">12</view>
-          <view class="sales">358</view>
+          <view class="sales">358.32</view>
         </view>
         <view class="row">
           <view class="name">老坛酸菜鱼+1份米饭</view>
-          <view class="sales">12</view>
-          <view class="sales">358</view>
+          <view class="sales">1</view>
+          <view class="sales">58.00</view>
         </view>
       </view>
     </view>

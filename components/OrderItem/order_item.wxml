@@ -1,0 +1,47 @@
+<!--components/OrderItem/order_item.wxml-->
+<view class="order_item">
+  <!-- 顶部店铺信息 -->
+  <view class="item_top">
+    <view class="store_info">
+      <image class="store_icon" mode="aspectFill" src="{{order_info.user_icon}}"></image>
+      <view class="store_name">{{order_info.user_name}}</view>
+    </view>
+    <view class="order_status">{{order_info.order_status_text}}</view>
+  </view>
+  <!-- 中间套餐或优惠券信息 -->
+  <view class="center_box">
+    <!-- 左侧图片 -->
+    <image class="preferential_icon" mode="aspectFill" lazy-load="true" src="{{order_info.package_icon}}"></image>
+    <!-- 右侧优惠信息文字 -->
+    <view class="center_info">
+      <view class="preferential_name">{{order_info.package_name}}</view>
+      <view class="info_item">单价：¥98</view>
+      <view class="info_item">数量：x{{order_info.number}}</view>
+      <view class="info_item">平台红包：-¥10</view>
+      <view class="info_item">积分抵扣：-¥0</view>
+      <view class="info_item">余额抵扣：-¥0</view>
+      <view class="info_item">用户实付金额：¥88</view>
+      <view class="info_item" wx:if="{{order_info.order_status == '1'}}">
+        <text>预计收入：</text>
+        <text class="money_active">¥{{order_info.total_money}}</text>
+      </view>
+      <view class="info_item" wx:if="{{order_info.order_status == '1'}}">付款时间：{{order_info.pay_time}}</view>
+      <view class="info_item" wx:if="{{order_info.order_status == '2'}}">核销时间：{{order_info.consumption_time}}</view>
+      <view class="info_item" wx:if="{{order_info.order_status == '3'}}">退款金额：¥{{order_info.total_money}}</view>
+      <view class="info_item" wx:if="{{order_info.order_status == '3'}}">退款时间：{{order_info.arrive_time}}</view>
+      <view class="info_item" wx:if="{{order_info.order_status == '3'}}">退款原因：就是不想来消费了；微信下单比这个便宜；没时间，来不了</view>
+    </view>
+  </view>
+  <!-- 下面操作栏 -->
+  <view class="bottom_box">
+    <!-- 待核销 -->
+    <view class="bottom_toast" wx:if="{{order_info.order_status == '1'}}">有效期至：{{order_info.end_time}}</view>
+    <!-- 已完成 -->
+    <view class="bottom_toast" wx:if="{{order_info.order_status == '2'}}">
+      <text>钱包入账金额：</text>
+      <text class="money_active">+¥88</text>
+    </view>
+    <!-- 已退款 -->
+    <view class="bottom_toast" wx:if="{{order_info.order_status == '3'}}">已退款至用户系统余额</view>
+  </view>
+</view>

@@ -1,1 +1,43 @@
 /* pages/order/order.wxss */
+.tab_back {
+  position: fixed;
+  background: #fff;
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  z-index: 1;
+}
+
+.tab_item {
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tab_label {
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+.active_tab_label{
+  font-weight: 700;
+}
+
+.active_tab {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.list_box {
+  padding: 105rpx 15rpx 0 15rpx;
+  width: 100%;
+}
+

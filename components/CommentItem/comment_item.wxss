@@ -1,0 +1,194 @@
+/* components/CommentItem/comment_item.wxss */
+
+.comment_box {
+  background: #fff;
+  border-bottom: 1rpx solid #f6f6f6;
+  padding: 20rpx;
+  display: flex;
+}
+
+.user_icon {
+  margin-right: 15rpx;
+  border-radius: 50%;
+  width: 90rpx;
+  height: 90rpx;
+}
+
+.user_info {
+  flex: 1;
+}
+
+.user_content {
+  width: 100%;
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.content_top {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.user_name {
+  font-size: 28rpx;
+  color: #3d5165;
+  font-weight: 700;
+}
+
+.create_time {
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.star_list {
+  display: flex;
+  align-items: center;
+}
+
+.hot_icon {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.comment_info {
+  margin-top: 10rpx;
+  font-size: 28rpx;
+  color: #0b0d1d;
+}
+
+.comment_imgs {
+  margin-top: 8rpx;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.comment_img {
+  margin-right: 6rpx;
+  margin-bottom: 6rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+/* 消费套餐 */
+
+.package_box {
+  margin-top: 10rpx;
+  display: flex;
+}
+
+.package_con {
+  background: #F1F6F9;
+  width: 50%;
+  height: 62rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 25rpx;
+  color: #333;
+}
+
+.package_name {
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.number{
+  width: 30rpx;
+}
+
+
+/* 回复 */
+.setting_box{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.complaint_box{
+  display: flex;
+  align-items: center;
+}
+.complaint_icon{
+  margin-right: 5rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+.complaint_text{
+  font-size: 24rpx;
+  color: #333;
+}
+.reply_box {
+  border-top: 1rpx solid #f6f6f6;
+  margin-top: 10rpx;
+  padding-top: 10rpx;
+  font-size: 25rpx;
+}
+
+.reply_those {
+  color: #3d5165;
+}
+
+.reply_text {
+  color: #333;
+}
+.reply_but{
+  border:1rpx solid #333;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 20rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  color: #333;
+}
+/* 回复的弹框 */
+.reply_back{
+  background: rgba(0, 0, 0, .6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+.reply_input{
+  background: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 500rpx;
+  padding: 20rpx;
+}
+.input_box{
+  border:1rpx solid #f6f6f6;
+  box-sizing: border-box;
+  height: 300rpx;
+  width: 100%;
+  padding: 15rpx;
+}
+.but_botttom{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.submit_reply{
+  margin-top: 20rpx;
+  background: #ec722e;
+  padding-left: 25rpx;
+  padding-right: 25rpx;
+  border-radius: 28rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 28rpx;
+  color: #fff;
+}

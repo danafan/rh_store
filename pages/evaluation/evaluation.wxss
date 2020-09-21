@@ -1,1 +1,4 @@
 /* pages/evaluation/evaluation.wxss */
+.comment_box{
+  /* padding: 20rpx; */
+}
