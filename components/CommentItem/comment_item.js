@@ -30,6 +30,7 @@ Component({
         show_big_img:true
       })
     },
+    // 关闭大图
     close(){
       this.setData({
         show_big_img: false
@@ -42,11 +43,31 @@ Component({
         show_input:true
       })
     },
+    //关闭回复
+    closeBack(){
+      this.setData({
+        show_input:false
+      })
+    },
     //监听商家回复
     changeInput(e){
       this.setData({
         reply_content:e.detail.value
       })
+    },
+    //申诉
+    complaint(){
+      wx.navigateTo({
+        url: '/pages/complaint/complaint'
+      });
+    },
+    //提交回复
+    submitReply(){
+      this.setData({
+        show_input: false
+      })
+      console.log(this.data.reply_content)
     }
+
   }
 })

@@ -1,4 +1,44 @@
 /* pages/evaluation/evaluation.wxss */
-.comment_box{
-  /* padding: 20rpx; */
+
+.info_back {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #fff;
+  height: 150rpx;
+  width: 100%;
+  padding: 15rpx;
+}
+
+.comment_info {
+  height: 100%;
+  width: 100%;
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
+  background: #F1F6F9;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item_label {
+  font-size: 26rpx;
+  color: #333;
+}
+
+.item_val {
+  color: #ec722e;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.val {
+  font-size: 36rpx;
+  font-weight: 700;
+}
+.desc{
+  font-size: 24rpx;
+}
+.comment_list {
+  padding: 170rpx 15rpx 0;
 }

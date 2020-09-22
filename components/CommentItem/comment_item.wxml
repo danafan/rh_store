@@ -16,11 +16,9 @@
       <image class="comment_img" mode="aspectFill" src="{{item}}" wx:for="{{comment_info.imgs}}" wx:key="*this" data-index="{{index}}" bindtap="openBigImg"></image>
     </view>
     <!-- 消费套餐 -->
-    <view class="package_box">
-      <view class="package_con">
-        <view class="package_name">好得火锅2人烤鱼套餐好得火锅2人烤鱼套餐</view>
-        <view class="number">x1</view>
-      </view>
+    <view class="package_con">
+      <text>好得火锅2人烤鱼套餐好得火锅2人烤鱼套餐</text>
+      <text class="number">x1</text>
     </view>
     <!-- 商家回复 -->
     <view class="reply_box">
@@ -29,7 +27,7 @@
     </view>
     <!-- 底部操作按钮 -->
     <view class="setting_box">
-      <view class="complaint_box">
+      <view class="complaint_box" bindtap="complaint">
         <image class="complaint_icon" src="../../images/complaint_icon.png"></image>
         <view class="complaint_text">申诉</view>
       </view>
@@ -38,10 +36,11 @@
   </view>
   <!-- 回复弹框 -->
   <view class="reply_back" wx:if="{{show_input}}">
+    <view class="closeBack" bindtap="closeBack"></view>
     <view class="reply_input">
       <textarea class="input_box" fixed="true" value="{{reply_content}}" show-confirm-bar="{{false}}" cursor-spacing="180" placeholder="您的回复会被公开展示，请注意措辞，最多140字..." bindinput="changeInput" auto-focus />
       <view class="but_botttom">
-        <view class="submit_reply">回复</view>
+        <view class="submit_reply" bindtap="submitReply">回复</view>
       </view>
     </view>
   </view>

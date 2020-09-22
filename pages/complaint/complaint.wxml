@@ -1,0 +1,18 @@
+<!--pages/complaint/complaint.wxml-->
+<view>
+  <view class="top_toast">温馨提示：为保障商家和用户的权益，热乎优选平台专门设立了评价处理团队。商家提交申诉请认真如实选择申诉原因，也可增加文字描述。申诉通过平台将删除该条评论并恢复商家评分。如经核实商家申诉原因不属实，将影响今后申诉通过率和商家店铺排名</view>
+  <view class="why_title">
+    <text class="title_label">申诉原因</text>
+    <text class="title_toast">（都不符合请添加文字描述）</text>
+  </view>
+  <view class="why_box">
+    <view class="why_item" wx:for="{{refund_list}}" wx:key="id" data-index="{{index}}" data-content="{{item.name}}" bindtap="checkItem">
+      <view class="item_text">{{item.name}}</view>
+      <image class="kuang" src="../../images/selected.png" wx:if="{{index == active_index}}"></image>
+      <image class="kuang" src="../../images/select.png" wx:else></image>
+    </view>
+    <!-- 文字内容 -->
+    <textarea class="input_box" value="{{reply_content}}" show-confirm-bar="{{false}}" cursor-spacing="180" placeholder="请输入详细描述，最多140字..." bindinput="changeInput"/>
+  </view>
+  <view class="submit_but" bindtap="applyRefund">申请退款</view>
+</view>

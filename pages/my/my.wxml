@@ -1,2 +1,67 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view>
+  <!-- 顶部黑色 -->
+  <view class="top_back">
+    <image class="store_img" src="../../images/banner_01.png"></image>
+    <view>
+      <view class="store_name">盛宴海鲜自助餐厅</view>
+      <view class="phone">13067882143</view>
+    </view>
+  </view>
+  <!-- 下面内容 -->
+  <view class="content_box">
+    <!-- 钱包 -->
+    <view class="money_box">
+      <view class="toll_top">
+        <view>我的钱包</view>
+        <view class="bill" bindtap="billPage">查看账单>></view>
+      </view>
+      <view class="money_box_list">
+        <view class="balance_box">
+          <view class="money_item">
+            <view class="item_label">钱包余额（元）</view>
+            <view class="item_val">0.00</view>
+          </view>
+          <view class="cash_but">提现</view>
+        </view>
+        <view class="yesterday_box">
+          <view class="money_item margin_right">
+            <view class="item_label">昨日收入（元）</view>
+            <view class="money_val">0.00</view>
+          </view>
+          <view class="money_item">
+            <view class="item_label">昨日支出（元）</view>
+            <view class="money_val">0.00</view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 工具 -->
+    <view class="toll_box">
+      <view class="toll_top">系统工具</view>
+      <view class="toll_list_box">
+        <view class="toll_item">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">门店设置</view>
+        </view>
+        <view class="toll_item">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">商品管理</view>
+        </view>
+        <view class="toll_item">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">银行卡</view>
+        </view>
+        <view class="toll_item">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">意见反馈</view>
+        </view>
+        <view class="toll_item">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">联系我们</view>
+        </view>
+      </view>
+    </view>
+    <view class="login_out">退出登录</view>
+  </view>
+</view>

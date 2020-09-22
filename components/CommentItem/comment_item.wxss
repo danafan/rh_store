@@ -1,8 +1,9 @@
 /* components/CommentItem/comment_item.wxss */
 
 .comment_box {
+  border-radius: 15rpx;
+  margin-bottom: 20rpx;
   background: #fff;
-  border-bottom: 1rpx solid #f6f6f6;
   padding: 20rpx;
   display: flex;
 }
@@ -74,63 +75,22 @@
 }
 
 /* 消费套餐 */
-
-.package_box {
-  margin-top: 10rpx;
-  display: flex;
-}
-
 .package_con {
-  background: #F1F6F9;
-  width: 50%;
-  height: 62rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
+  margin-top: 15rpx;
   font-size: 25rpx;
   color: #333;
 }
-
-.package_name {
-  flex: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
 .number{
+  margin-left: 30rpx;
   width: 30rpx;
 }
 
-
-/* 回复 */
-.setting_box{
-  margin-top: 10rpx;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.complaint_box{
-  display: flex;
-  align-items: center;
-}
-.complaint_icon{
-  margin-right: 5rpx;
-  width: 22rpx;
-  height: 22rpx;
-}
-.complaint_text{
-  font-size: 24rpx;
-  color: #333;
-}
+/* 商家回复 */
 .reply_box {
-  border-top: 1rpx solid #f6f6f6;
-  margin-top: 10rpx;
-  padding-top: 10rpx;
-  font-size: 25rpx;
+  margin-top: 15rpx;
+  background: #F1F6F9;
+  padding: 10rpx;
+  font-size: 28rpx;
 }
 
 .reply_those {
@@ -138,18 +98,9 @@
 }
 
 .reply_text {
-  color: #333;
+  color: #0b0d1d;
 }
-.reply_but{
-  border:1rpx solid #333;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-  border-radius: 20rpx;
-  height: 40rpx;
-  line-height: 40rpx;
-  font-size: 24rpx;
-  color: #333;
-}
+
 /* 回复的弹框 */
 .reply_back{
   background: rgba(0, 0, 0, .6);
@@ -159,13 +110,14 @@
   width: 100%;
   height: 100%;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+.closeBack{
+  flex: 1;
 }
 .reply_input{
   background: #fff;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
   height: 500rpx;
   padding: 20rpx;
 }
@@ -191,4 +143,34 @@
   line-height: 56rpx;
   font-size: 28rpx;
   color: #fff;
+}
+/* 操作按钮 */
+.setting_box{
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.complaint_box{
+  display: flex;
+  align-items: center;
+}
+.complaint_icon{
+  margin-right: 5rpx;
+  width: 22rpx;
+  height: 22rpx;
+}
+.complaint_text{
+  font-size: 24rpx;
+  color: #333;
+}
+.reply_but{
+  border:1rpx solid #333;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+  border-radius: 23rpx;
+  height: 46rpx;
+  line-height: 46rpx;
+  font-size: 26rpx;
+  color: #333;
 }

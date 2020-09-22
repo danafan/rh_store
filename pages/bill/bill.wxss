@@ -1,0 +1,68 @@
+/* pages/bill/bill.wxss */
+.bill_container{
+  padding: 0 15rpx 20rpx;
+}
+.query_box{
+  height: 140rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.pick_box{
+  display: flex;
+  align-items: center;
+}
+.query_text{
+  font-size: 28rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.down_icon{
+  margin-left: 5rpx;
+  width: 20rpx;
+  height: 20rpx;
+}
+.money_info{
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.info_item{
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.bill_item{
+  margin-bottom: 20rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  width: 100%;
+  height: 140rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding:20rpx; 
+}
+.bill_row{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bill_desc{
+  font-size: 28rpx;
+  color: #0b0d1d;
+}
+.check_money{
+  font-size: 35rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.add_check_money{
+  color: #e84d2a;
+}
+.bottom_row{
+  font-size: 26rpx;
+  color: #8a8a8a;
+}

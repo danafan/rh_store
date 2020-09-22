@@ -4,7 +4,15 @@
   <view class="navgation_box">
     <view class='startBar' style='height:{{startBarHeight}}px'></view>
     <!-- 标题 -->
-    <view class="title_text" style="height:{{navgationHeight}}px">盛宴海鲜自助餐厅</view>
+    <view class="title_text" style="height:{{navgationHeight}}px">
+      <view class="store_name">盛宴海鲜自助餐厅</view>
+      <view class="store_status {{store_status == '2'?'no_store_status':''}}">
+        <view class="yuan {{store_status == '2'?'no_yuan':''}}"></view>
+        <view class="status_text">{{store_status == '1'?'营业中':'已打烊'}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+      <view class="zhan"></view>
+    </view>
   </view>
   <!-- 扫码模块 -->
   <view class="index_top" style='margin-top:{{startBarHeight + navgationHeight}}px'>
@@ -53,7 +61,7 @@
       <!-- 经营数据内容 -->
       <view class="data_content">
         <view class="data_item">
-          <view class="data_label">总收益</view>
+          <view class="data_label">已入账</view>
           <view class="data_number">805.45</view>
         </view>
         <view class="data_item">
@@ -65,16 +73,16 @@
           <view class="data_number">12</view>
         </view>
         <view class="data_item">
+          <view class="data_label">预计收益</view>
+          <view class="data_number">356.88</view>
+        </view>
+        <view class="data_item">
           <view class="data_label">下单金额</view>
           <view class="data_number">389.00</view>
         </view>
         <view class="data_item">
           <view class="data_label">下单数量</view>
           <view class="data_number">3</view>
-        </view>
-        <view class="data_item">
-          <view class="data_label">申请退款</view>
-          <view class="data_number">0</view>
         </view>
       </view>
       <!-- 套餐分析 -->

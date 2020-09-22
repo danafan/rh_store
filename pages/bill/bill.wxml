@@ -1,0 +1,33 @@
+<!--pages/bill/bill.wxml-->
+<view class="bill_container">
+  <view class="query_box">
+    <picker mode="date" start="{{start_date}}" end="{{end_date}}" fields="month" bindchange="bindDateChange">
+      <view class="pick_box">
+        <view class="query_text">{{current_date}}</view>
+        <image class="down_icon" src="../../images/down_icon.png"></image>
+      </view>
+    </picker>
+    <view class="money_info">
+      <view class="info_item">
+        <text class="bottom_row">收入</text>
+        <text class="check_money"> +1580.42 </text>
+        <text class="bottom_row">2笔</text>
+      </view>
+      <view class="info_item">
+        <text class="bottom_row">支出</text>
+        <text class="check_money"> -265.87 </text>
+        <text class="bottom_row">3笔</text>
+      </view>
+    </view>
+  </view>
+  <view class="bill_item" wx:for="{{bill_list}}" wx:key="id">
+    <view class="bill_row">
+      <view class="bill_desc">{{item.desc}}</view>
+      <view class="check_money {{item.type == '1'?'add_check_money':''}}">{{item.type == '1'?'+':'-'}}{{item.check_money}}</view>
+    </view>
+    <view class="bill_row bottom_row">
+      <view>{{item.create_time}}</view>
+      <view>余额：{{item.balance}}</view>
+    </view>
+  </view>
+</view>

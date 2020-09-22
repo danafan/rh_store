@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/cash/cash",
     "pages/index/index",
+    "pages/bill/bill",
+    "pages/my/my",
+    "pages/complaint/complaint",
     "pages/evaluation/evaluation",
     "pages/order/order",
-    "pages/my/my",
     "pages/preferential/preferential"
   ],
   "tabBar": {

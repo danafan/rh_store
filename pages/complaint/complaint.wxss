@@ -1,0 +1,68 @@
+/* pages/complaint/complaint.wxss */
+.top_toast {
+  background: #fceee7;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 24rpx;
+  color: #e84d2a;
+}
+
+.why_title {
+  padding-left: 20rpx;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.title_label {
+  font-size: 32rpx;
+  color: #333;
+  font-weight: 700;
+}
+
+.title_toast {
+  font-size: 28rpx;
+  color: #8a8a8a;
+}
+
+.why_box {
+  background: #fff;
+  width: 100%;
+  padding: 0 20rpx 20rpx;
+}
+
+.why_item {
+  border-bottom: 1rpx solid #f6f6f6;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.item_text {
+  font-size: 28rpx;
+  color: #0b0d1d;
+}
+
+.kuang {
+  width: 36rpx;
+  height: 36rpx;
+}
+.input_box{
+  margin-top: 20rpx;
+  border:1rpx solid #f6f6f6;
+  box-sizing: border-box;
+  height: 220rpx;
+  width: 100%;
+  padding: 15rpx;
+}
+.submit_but{
+  margin: 50rpx auto;
+  border-radius: 45rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #fff;
+}

@@ -1,5 +1,32 @@
 <!--pages/evaluation/evaluation.wxml-->
-<view class="comment_box">
-  <comment_item/>
-  <comment_item/>
+<view>
+  <view class="info_back">
+    <view class="comment_info">
+      <view class="info_item">
+        <view class="item_label">综合评分</view>
+        <view class="item_val">
+          <text class="val">4.8</text>
+          <text class="desc">(分)</text>
+        </view>
+      </view>
+      <view class="info_item">
+        <view class="item_label">评价总数</view>
+        <view class="item_val">
+          <text class="val">786</text>
+          <text class="desc">(条)</text>
+        </view>
+      </view>
+      <view class="info_item">
+        <view class="item_label">好评率</view>
+        <view class="item_val">
+          <text class="val">89</text>
+          <text class="desc">(%)</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="comment_list">
+    <comment_item/>
+    <comment_item/>
+  </view>
 </view>

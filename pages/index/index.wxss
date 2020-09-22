@@ -11,14 +11,57 @@
 
 .title_text {
   padding-left: 15rpx;
+  padding-right: 15rpx;
   width: 100%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.store_name {
+  flex: 1;
   font-size: 32rpx;
   color: #fff;
   font-weight: 700rpx;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
-
+.store_status{
+  margin-left: 10rpx;
+  background: #E2F9F1;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 150rpx;
+  height: 36rpx;
+  border-radius: 18rpx;
+}
+.no_store_status{
+  background: #f6f6f6;
+}
+.yuan{
+  background: #4CB96D;
+  border-radius: 50%;
+  width: 20rpx;
+  height: 20rpx;
+}
+.no_yuan{
+  background: #8a8a8a;
+}
+.status_text{
+  font-size: 24rpx;
+  color: #333;
+}
+.right_icon{
+  width: 20rpx;
+  height: 20rpx;
+}
+.zhan{
+  width: 220rpx;
+}
 /* 顶部核销模块 */
 
 .index_top {
@@ -60,7 +103,9 @@
   border-radius: 10rpx;
   background: #fff;
 }
+
 /* 顶部时间切换 */
+
 .check_date_box {
   border-bottom: 1rpx solid #f6f6f6;
   padding-bottom: 30rpx;

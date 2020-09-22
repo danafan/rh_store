@@ -3,6 +3,7 @@
 const app = getApp()
 Page({
   data: {
+    store_status:1,   //1:营业中；2:已打烊
     startBarHeight: 0,
     navgationHeight: 0,
     date_type_list: [{
