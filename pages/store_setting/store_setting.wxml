@@ -1,0 +1,92 @@
+<!--pages/store_setting/store_setting.wxml-->
+<view>
+  <view class="store_content">
+    <view class="content_item">
+      <view class="item_label">店铺名称</view>
+      <view class="item_content" data-edit_id="1" bindtap="editFun">
+        <view class="val">{{store_name}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">经营品类</view>
+      <picker range-key="name" bindchange="changeCate" range="{{category_list}}">
+        <view class="item_content">
+          <view class="val">{{active_cate_name}}</view>
+          <image class="right_icon" src="../../images/right.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="content_item">
+      <view class="item_label">
+        <view>店铺主图</view>
+        <view class="toast">*每月允许修改一次</view>
+      </view>
+      <view class="item_content" bindtap="editStoreImg">
+        <image class="store_img" mode="aspectFill" src="../../images/banner_01.png"></image>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="store_content">
+    <view class="content_item">
+      <view class="item_label">营业状态</view>
+      <picker range-key="name" bindchange="changeStatus" range="{{business_status_list}}">
+        <view class="item_content">
+          <view class="val {{business_status == '1'?'business':''}}">{{business_name}}</view>
+          <image class="right_icon" src="../../images/right.png"></image>
+        </view>
+      </picker>
+    </view>
+    <view class="content_item">
+      <view class="item_label">店铺电话</view>
+      <view class="item_content" data-edit_id="2" bindtap="editFun">
+        <view class="val">{{phone}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">店铺地址</view>
+      <view class="item_content" bindtap="chooseLocation">
+        <view class="val">{{location_address}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">营业时间</view>
+      <view class="item_content" data-edit_id="3" bindtap="editFun">
+        <view class="val">{{business_hours}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="store_content">
+    <view class="content_item">
+      <view class="item_label">营业资质</view>
+      <view class="item_content">
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">合同协议</view>
+      <view class="item_content">
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+  </view>
+  <!-- 修改店铺名称、店铺电话、营业时间 -->
+  <view class="modal_box" wx:if="{{showModal}}">
+    <view class="edit_box">
+      <view class="title">{{title}}</view>
+      <view class="edit_content">
+        <input class="edit_input" type="text" value="{{edit_value}}" bindinput="changeValue"></input>
+        <view class="toast">*每月允许修改一次</view>
+      </view>
+      <view class="bottom_box">
+        <view class="but" bindtap="closeModal">取消</view>
+        <view class="line"></view>
+        <view class="but" bindtap="submitAudit">提交审核</view>
+      </view>
+    </view>
+  </view>
+</view>

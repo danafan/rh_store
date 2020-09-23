@@ -1,0 +1,191 @@
+/* pages/commodity_management/commodity_management.wxss */
+
+.tab_back {
+  background: #f1f6f9;
+  position: fixed;
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  align-items: center;
+  z-index: 1;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+}
+
+.tab_item {
+  margin-right: 50rpx;
+  height: 90rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.tab_label {
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+
+.num {
+  margin-left: 5rpx;
+  color: #333;
+  font-size: 26rpx;
+}
+
+.active_tab_label {
+  font-size: 32rpx;
+  font-weight: 700;
+}
+
+.active_tab {
+  position: absolute;
+  bottom: 0;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  height: 8rpx;
+  border-radius: 4rpx;
+}
+
+.commodity_list {
+  padding: 120rpx 15rpx 120rpx;
+}
+
+.bus_item {
+  margin-bottom: 20rpx;
+  background: #fff;
+  padding: 15rpx 10rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.special {
+  background: #fff;
+  margin-bottom: 20rpx;
+  padding: 15rpx 10rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.package_img {
+  margin-right: 10rpx;
+  width: 180rpx;
+  height: 180rpx;
+}
+
+.bus_content {
+  flex: 1;
+  height: 180rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.top_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.left_info{
+  flex: 1;
+}
+.bus_title {
+  font-size: 28rpx;
+  font-weight: 700;
+  color: #0b0d1d;
+}
+
+.desc {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+.right_icon{
+  margin-left: 10rpx;
+  width: 26rpx;
+  height: 26rpx;
+}
+
+/* 底部行 */
+
+.bottom_box {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price_box {
+  margin-top: 5rpx;
+  display: flex;
+}
+
+.pagkage_price {
+  margin-right: 15rpx;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.price_icon {
+  font-size: 26rpx;
+  color: #ff5858;
+}
+
+.price_now {
+  margin-right: 8rpx;
+  font-size: 34rpx;
+  font-weight: 700;
+  color: #ff5858;
+}
+
+.price_old {
+  text-decoration: line-through;
+  font-size: 26rpx;
+  color: #8a8a8a;
+}
+
+.tag {
+  border-radius: 18rpx 18rpx 18rpx 0;
+  height: 36rpx;
+  line-height: 36rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  font-size: 22rpx;
+  background: #f9d9d0;
+  color: #ff5858;
+}
+
+.shelves {
+  border:1rpx solid #8a8a8a;
+  border-radius: 25rpx;
+  height: 50rpx;
+  width: 110rpx;
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* 添加按钮 */
+.add_but{
+  position: fixed;
+  bottom: 20rpx;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 45rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  height: 90rpx;
+  font-size: 32rpx;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add_icon{
+  margin-right: 10rpx;
+  width: 40rpx;
+  height: 40rpx;
+}

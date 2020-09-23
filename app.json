@@ -1,7 +1,10 @@
 {
   "pages": [
-    "pages/cash/cash",
     "pages/index/index",
+    "pages/edit_commodity/edit_commodity",
+    "pages/commodity_management/commodity_management",
+    "pages/store_setting/store_setting",
+    "pages/cash/cash",
     "pages/bill/bill",
     "pages/my/my",
     "pages/complaint/complaint",

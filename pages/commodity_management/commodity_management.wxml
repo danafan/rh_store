@@ -1,0 +1,49 @@
+<!--pages/commodity_management/commodity_management.wxml-->
+<view class="commodity_box">
+  <view class="tab_back">
+    <view class="tab_item" data-index="0" bindtap="checkTab">
+      <view class="tab_label {{tab_index == '0'?'active_tab_label':''}}">
+        <text>全部</text>
+        <text class="num">(8)</text>
+      </view>
+      <view class="active_tab" wx:if="{{tab_index == '0'}}"></view>
+    </view>
+    <view class="tab_item" data-index="1" bindtap="checkTab">
+      <view class="tab_label {{tab_index == '1'?'active_tab_label':''}}">
+        <text>已下架</text>
+        <text class="num">(0)</text>
+      </view>
+      <view class="active_tab" wx:if="{{tab_index == '1'}}"></view>
+    </view>
+  </view>
+  <!-- 列表 -->
+  <view class="commodity_list">
+    <view class="bus_item" wx:for="{{commodity_list}}" wx:key="*this" data-sub_type="edit" data-id="1" bindtap="editCommodity">
+      <image class="package_img" mode="aspectFill" src="../../images/banner_02.jpg"></image>
+      <view class="bus_content">
+        <view class="top_box">
+          <view class="left_info">
+            <view class="bus_title">大众精选杭帮菜2人特惠套餐</view>
+            <view class="desc">已售 108</view>
+          </view>
+          <image class="right_icon" src="../../images/right.png"></image>
+        </view>
+        <view class="bottom_box">
+          <view class="price_box">
+            <view class="pagkage_price">
+              <text class="price_icon">¥</text>
+              <text class="price_now">108</text>
+              <text class="price_old">¥188</text>
+            </view>
+            <view class="tag">7.8折</view>
+          </view>
+          <view class="shelves" bindtap="shelvesFun">下架</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="add_but" data-sub_type="add" catchtap="editCommodity">
+    <image class="add_icon" src="../../images/add_icon.png"></image>
+    <view>新建商品</view>
+  </view>
+</view>

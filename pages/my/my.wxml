@@ -22,7 +22,7 @@
             <view class="item_label">钱包余额（元）</view>
             <view class="item_val">0.00</view>
           </view>
-          <view class="cash_but">提现</view>
+          <view class="cash_but" bindtap="cashMoney">提现</view>
         </view>
         <view class="yesterday_box">
           <view class="money_item margin_right">
@@ -40,11 +40,11 @@
     <view class="toll_box">
       <view class="toll_top">系统工具</view>
       <view class="toll_list_box">
-        <view class="toll_item">
+        <view class="toll_item" bindtap="storeSetting">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">门店设置</view>
         </view>
-        <view class="toll_item">
+        <view class="toll_item" bindtap="commodityManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">商品管理</view>
         </view>

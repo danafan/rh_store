@@ -1,0 +1,27 @@
+<!--pages/edit_commodity/edit_commodity.wxml-->
+<view>
+  <view class="commodity_content">
+    <view class="item_row">
+      <view class="label">名称</view>
+      <input class="input_box" type="text" value="{{store_name}}" placeholder="30字以内" bindinput="changeName"></input>
+    </view>
+    <view class="item_row">
+      <view class="label">图片</view>
+      <view class="img_box">
+        <view class="img_list">
+
+        </view>
+        <view class="size_toast">建议图片比例 1:1.5，大于600*400像素</view>
+        <view class="toast">默认首张图片为封面图，拖动图片可调整顺序</view>
+      </view>
+    </view>
+    <view class="item_row">
+      <view class="label">商品内容</view>
+      <input class="input_box" type="text" value="{{store_name}}" placeholder="30字以内" bindinput="changeName"></input>
+    </view>
+    <view class="item_row">
+      <view class="label">价格</view>
+      <input class="input_box" type="text" value="{{store_name}}" placeholder="30字以内" bindinput="changeName"></input>
+    </view>
+  </view>
+</view>
