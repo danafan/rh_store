@@ -1,0 +1,43 @@
+/* pages/add_bank/add_bank.wxss */
+.item_row{
+  background: #fff;
+  border-bottom: 1rpx solid #f6f6f6;
+  padding: 30rpx 15rpx;
+  display: flex;
+}
+.label{
+  width: 140rpx;
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+.input_box{
+  flex: 1;
+}
+.phone_item {
+  justify-content: space-between;
+}
+
+.phone_item_left {
+  display: flex;
+  align-items: center;
+}
+.code_txt {
+  font-size: 28rpx;
+  color: #3778ff;
+}
+
+.code_text_active {
+  color: #666;
+}
+
+.button {
+  margin: 50rpx auto;
+  border-radius: 45rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #fff;
+}

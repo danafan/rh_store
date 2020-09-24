@@ -1,0 +1,6 @@
+<!--pages/bank_management/bank_management.wxml-->
+<view class="container">
+  <view class="bank_item">
+    
+  </view>
+</view>

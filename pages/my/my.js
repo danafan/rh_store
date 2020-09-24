@@ -31,6 +31,12 @@ Page({
       url: '/pages/commodity_management/commodity_management',
     });
   },
+  //银行卡管理
+  bankManagement() {
+    wx.navigateTo({
+      url: '/pages/bank_management/bank_management',
+    });
+  },
   //分享自定义
   onShareAppMessage: function (res) {
     return app.globalData.shareObj

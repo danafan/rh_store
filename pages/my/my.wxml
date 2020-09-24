@@ -48,7 +48,7 @@
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">商品管理</view>
         </view>
-        <view class="toll_item">
+        <view class="toll_item" bindtap="bankManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">银行卡</view>
         </view>
