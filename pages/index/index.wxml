@@ -9,7 +9,6 @@
       <view class="store_status {{store_status == '2'?'no_store_status':''}}">
         <view class="yuan {{store_status == '2'?'no_yuan':''}}"></view>
         <view class="status_text">{{store_status == '1'?'营业中':'已打烊'}}</view>
-        <image class="right_icon" src="../../images/right.png"></image>
       </view>
       <view class="zhan"></view>
     </view>

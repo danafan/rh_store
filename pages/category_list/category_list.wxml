@@ -1,0 +1,18 @@
+<!--pages/category_list/category_list.wxml-->
+<view>
+  <view class="cate_item" wx:for="{{category_list}}" wx:key="id">
+    <view class="item_left">
+      <view class="cate_name">{{item.name}}</view>
+      <view class="toast">{{item.children_num}}件商品</view>
+    </view>
+    <view class="item_right">
+      <view class="but" data-cate_id="{{item.id}}" bindtap="editCate">编辑</view>
+      <view class="but" data-cate_id="{{item.id}}" bindtap="delCate">删除</view>
+    </view>
+  </view>
+  <view class="add_bank" bindtap="addCate">
+    <image class="add_icon" src="../../images/add_icon.png"></image>
+    <view class="add_text">添加分类</view>
+  </view>
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="{{title}}" edit_value="{{edit_value}}" wx:if="{{showModal}}"/>
+</view>

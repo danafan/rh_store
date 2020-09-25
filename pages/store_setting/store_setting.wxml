@@ -75,18 +75,5 @@
     </view>
   </view>
   <!-- 修改店铺名称、店铺电话、营业时间 -->
-  <view class="modal_box" wx:if="{{showModal}}">
-    <view class="edit_box">
-      <view class="title">{{title}}</view>
-      <view class="edit_content">
-        <input class="edit_input" type="text" value="{{edit_value}}" bindinput="changeValue"></input>
-        <view class="toast">*每月允许修改一次</view>
-      </view>
-      <view class="bottom_box">
-        <view class="but" bindtap="closeModal">取消</view>
-        <view class="line"></view>
-        <view class="but" bindtap="submitAudit">提交审核</view>
-      </view>
-    </view>
-  </view>
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="{{title}}" edit_value="{{edit_value}}" wx:if="{{showModal}}"/>
 </view>

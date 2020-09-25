@@ -76,13 +76,6 @@ Page({
       title: title
     })
   },
-  //监听修改的内容
-  changeValue(e){
-    let value = e.detail.value;
-    this.setData({
-      edit_value: value
-    })
-  },
   //修改店铺地址
   chooseLocation() {
     locationApi.chooseLocation().then(res => {
@@ -90,26 +83,26 @@ Page({
     })
   },
   //取消
-  closeModal(){
+  onClose() {
     this.setData({
       showModal: false
     })
   },
-  //提交审核
-  submitAudit() {
+  //确认
+  submitContent(e) {
     if (this.data.edit_id == '1') { //店铺名称
       let req = {
-        store_name: this.data.edit_value
+        store_name: e.detail.edit_value
       }
       console.log(req)
     } else if (this.data.edit_id == '2') {  //店铺电话
       let req = {
-        phone: this.data.edit_value
+        phone: e.detail.edit_value
       }
       console.log(req)
     } else if (this.data.edit_id == '3') {  //营业时间
       let req = {
-        business_hours: this.data.edit_value
+        business_hours: e.detail.edit_value
       }
       console.log(req)
     }

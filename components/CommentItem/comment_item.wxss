@@ -78,7 +78,7 @@
 .package_con {
   margin-top: 15rpx;
   font-size: 25rpx;
-  color: #333;
+  color: #8a8a8a;
 }
 .number{
   margin-left: 30rpx;
@@ -165,12 +165,13 @@
   color: #333;
 }
 .reply_but{
-  border:1rpx solid #333;
-  padding-left: 20rpx;
-  padding-right: 20rpx;
-  border-radius: 23rpx;
-  height: 46rpx;
-  line-height: 46rpx;
-  font-size: 26rpx;
+  border: 1rpx solid #8a8a8a;
+  border-radius: 24rpx;
+  width: 100rpx;
+  height: 48rpx;
+  font-size: 24rpx;
   color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

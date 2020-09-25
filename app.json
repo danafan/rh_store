@@ -1,17 +1,20 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/order/order",
+    "pages/my/my",
+    "pages/menu_management/menu_management",
+    "pages/edit_menu/edit_menu",
+    "pages/commodity_management/commodity_management",
+    "pages/category_list/category_list",
+    "pages/store_setting/store_setting",
     "pages/add_bank/add_bank",
     "pages/bank_management/bank_management",
-    "pages/index/index",
     "pages/edit_commodity/edit_commodity",
-    "pages/commodity_management/commodity_management",
-    "pages/store_setting/store_setting",
     "pages/cash/cash",
     "pages/bill/bill",
-    "pages/my/my",
     "pages/complaint/complaint",
     "pages/evaluation/evaluation",
-    "pages/order/order",
     "pages/preferential/preferential"
   ],
   "tabBar": {

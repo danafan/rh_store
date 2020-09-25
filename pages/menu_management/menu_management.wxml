@@ -1,0 +1,33 @@
+<!--pages/menu_management/menu_management.wxml-->
+<view class="menu_container">
+  <view class="menu_content_box">
+    <scroll-view scroll-y="true" class="cate_list">
+      <view class="cate_item {{index == active_cate_index?'active-item':''}}" wx:for="{{category_list}}" wx:key="id" data-index="{{index}}" bindtap="changeCate">{{item.name}}</view>
+    </scroll-view>
+    <scroll-view scroll-y="true" class="menu_list">
+      <view class="menu_item" wx:for="{{menu_list}}" wx:key="id">
+        <image class="menu_img" mode="aspectFill" src="{{item.img}}"></image>
+        <view class="menu_content">
+          <view class="menu_name">{{item.name}}</view>
+          <view class="bottom_row">
+            <view class="price_box">
+              <text class="price_icon">¥</text>
+              <text class="price_text">{{item.price}}</text>
+            </view>
+            <view class="buts_box">
+              <view class="but" data-menu_id="{{item.id}}" data-submit_type="edit" bindtap="editMenu">编辑</view>
+              <view class="but" data-menu_id="{{item.id}}" bindtap="delMenu">删除</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="bottom_box">
+    <view class="menu_setting" bindtap="categorySetting">管理分类</view>
+    <view class="add_menu" data-sub_type="add" bindtap="editMenu">
+      <image class="add_icon" src="../../images/add_icon.png"></image>
+      <view class="add_text">添加菜品</view>
+    </view>
+  </view>
+</view>

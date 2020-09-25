@@ -5,29 +5,20 @@
   padding: 30rpx 15rpx;
   display: flex;
 }
+.between{
+  align-items: center;
+  justify-content: space-between;
+}
 .label{
   width: 140rpx;
   font-size: 30rpx;
   color: #0b0d1d;
 }
+.card_label{
+  width: 260rpx;
+}
 .input_box{
   flex: 1;
-}
-.phone_item {
-  justify-content: space-between;
-}
-
-.phone_item_left {
-  display: flex;
-  align-items: center;
-}
-.code_txt {
-  font-size: 28rpx;
-  color: #3778ff;
-}
-
-.code_text_active {
-  color: #666;
 }
 
 .button {

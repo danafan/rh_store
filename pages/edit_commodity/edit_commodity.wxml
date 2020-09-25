@@ -2,11 +2,11 @@
 <view>
   <view class="commodity_content">
     <view class="item_row">
-      <view class="label">名称</view>
-      <input class="input_box" type="text" value="{{store_name}}" data-type="store_name" placeholder="30字以内" bindinput="changeVal"></input>
+      <view class="label">商品名称</view>
+      <input class="input_box" type="text" value="{{store_name}}" data-type="store_name" placeholder="30字以内..." bindinput="changeVal"></input>
     </view>
     <view class="item_row">
-      <view class="label">图片</view>
+      <view class="label">商品图片</view>
       <view class="img_box">
         <view class="img_list">
           <!-- 已上传的图片 -->
@@ -26,14 +26,17 @@
     </view>
     <view class="item_row">
       <view class="label">商品内容</view>
-      <input class="input_box" type="text" value="{{store_name}}" data-type="store_name" placeholder="30字以内" bindinput="changeVal"></input>
     </view>
     <view class="item_row">
       <view class="label">价格</view>
       <view class="price_box">
         <text class="price_icon">¥</text>
-        <input class="input_box" type="digit" value="{{new_price}}" data-type="new_price" placeholder="用户购买金额" bindinput="changeVal"></input>
+        <input class="input_box price_input" type="digit" value="{{new_price}}" data-type="new_price" placeholder="用户购买金额" bindinput="changeVal"></input>
       </view>
+    </view>
+    <view class="item_row between">
+      <view class="label card_label">审核通过后直接上架</view>
+      <switch checked="{{is_default}}" color="#ec722e" data-type="is_default" bindchange="changeVal" />
     </view>
 
   </view>

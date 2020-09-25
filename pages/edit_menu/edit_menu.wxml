@@ -1,0 +1,30 @@
+<!--pages/edit_menu/edit_menu.wxml-->
+<view>
+  <view class="item_row">
+    <view class="label">图片</view>
+    <view class="img_box">
+      <view class="img_list">
+        <!-- 选择图片 -->
+        <view class="upload_box" bindtap="chooseImg" wx:if="{{menu_img == ''}}">
+          <image class="upload_icon" src="../../images/camera.png"></image>
+          <view class="upload_text">上传图片</view>
+        </view>
+        <!-- 已上传的图片 -->
+        <image class="commodity_img_box" bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="handleLongPress" bindtap="handleClick" mode="aspectFill" src="{{menu_img}}" wx:else></image>
+      </view>
+      <view class="size_toast">*图片比例 1:1，建议大于600*600像素</view>
+    </view>
+  </view>
+  <view class="item_row">
+    <view class="label">菜品名称</view>
+    <input class="input_box" type="text" value="{{menu_name}}" data-type="menu_name" placeholder="30字以内" bindinput="changeVal"></input>
+  </view>
+  <view class="item_row">
+    <view class="label">价格</view>
+    <view class="price_box">
+      <text class="price_icon">¥</text>
+      <input class="input_box price_input" type="digit" value="{{menu_price}}" data-type="menu_price" placeholder="菜品价格" bindinput="changeVal"></input>
+    </view>
+  </view>
+  <view class="sub_but" bindtap="submit">确认</view>
+</view>

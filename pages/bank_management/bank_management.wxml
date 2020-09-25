@@ -1,6 +1,12 @@
 <!--pages/bank_management/bank_management.wxml-->
 <view class="container">
-  <view class="bank_item">
-    
+  <view class="bank_item" wx:for="{{bank_list}}" wx:key="id" data-bank_id="{{item.id}}" bindtap="settingBank">
+    <view class="bank_name">{{item.bank_name}}</view>
+    <view class="bank_code">{{item.bank_code}}</view>
+    <image class="is_default" src="../../images/bank_icon.png" wx:if="{{item.is_default}}"></image>
+  </view>
+  <view class="add_bank" bindtap="addBank" wx:if="{{type == 'my'}}">
+    <image class="add_icon" src="../../images/add_icon.png"></image>
+    <view class="add_text">添加银行卡</view>
   </view>
 </view>

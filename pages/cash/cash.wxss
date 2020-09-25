@@ -1,9 +1,12 @@
 /* pages/cash/cash.wxss */
-.cash_container{
+
+.cash_container {
   padding: 20rpx 15rpx;
 }
+
 /* //银行卡 */
-.bank_box{
+
+.bank_box {
   padding-left: 20rpx;
   padding-right: 20rpx;
   border-radius: 10rpx;
@@ -14,58 +17,78 @@
   align-items: center;
   justify-content: space-between;
 }
-.bank_label{
+
+.bank_label {
   font-size: 30rpx;
   color: #0b0d1d;
   font-weight: 700;
 }
-.bank_info{
+
+.bank_right {
+  display: flex;
+  align-items: center;
+}
+
+.bank_info {
   font-size: 30rpx;
   color: #333;
 }
-.right_icon{
+
+.right_icon {
+  margin-left: 10rpx;
   width: 30rpx;
   height: 30rpx;
 }
+
 /* 提现模块 */
-.cash_box{
+
+.cash_box {
   margin-top: 20rpx;
   padding: 0 20rpx 20rpx;
   border-radius: 10rpx;
   background: #fff;
   width: 100%;
 }
-.box_title{
+
+.box_title {
   height: 110rpx;
   line-height: 110rpx;
   font-size: 30rpx;
   color: #0b0d1d;
   font-weight: 700;
 }
+
 /* input模块 */
-.input_box{
-  border-bottom:1rpx solid #f6f6f6;
+
+.input_box {
+  border-bottom: 1rpx solid #f6f6f6;
   padding-bottom: 15rpx;
 }
-.cash_input{
+
+.cash_input {
   height: 90rpx;
   font-size: 46rpx;
   color: #0b0d1d;
 }
+
 /* 全部提现 */
-.bottom_content{
+
+.bottom_content {
   height: 60rpx;
   line-height: 60rpx;
   font-size: 28rpx;
 }
-.can_cash{
+
+.can_cash {
   color: #8a8a8a;
 }
-.all_cash{
+
+.all_cash {
   margin-left: 20rpx;
   color: #3d5165;
 }
-.cash_but{
+
+.cash_but {
   margin: 50rpx auto;
   border-radius: 45rpx;
   background-image: linear-gradient(to left, #e84d2a, #ec722e);

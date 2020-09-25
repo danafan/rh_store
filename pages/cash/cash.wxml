@@ -1,12 +1,12 @@
 <!--pages/cash/cash.wxml-->
 <view class="cash_container">
-  <picker range-key="name" bindchange="changeBank" range="{{bank_list}}">
-    <view class="bank_box">
-      <view class="bank_label">到账银行卡</view>
+  <view class="bank_box">
+    <view class="bank_label">到账银行卡</view>
+    <view class="bank_right" bindtap="changeBank">
       <view class="bank_info">{{bank_name}}</view>
       <image class="right_icon" src="../../images/right.png"></image>
     </view>
-  </picker>
+  </view>
   <view class="cash_box">
     <view class="box_title">提现金额（元）</view>
     <view class="input_box">

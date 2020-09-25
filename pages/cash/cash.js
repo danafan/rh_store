@@ -5,27 +5,15 @@ Page({
     cash_money:"",      //输入的提现金额
     bank_name:"中国工商银行",         //选中的银行名称
     bank_id:"1",
-    bank_list: [{
-      id: '1',
-      name: '中国工商银行(3053)'
-    }, {
-      id: '2',
-      name: '中国农业银行(5826)'
-    }, {
-      id: '3',
-      name: '中国建设银行(7017)'
-    }],           //银行列表
   },
   onLoad: function (options) {
 
   },
   //切换银行
-  changeBank(e){
-    let pickIndex = e.detail.value;
-    this.setData({
-      bank_name: this.data.bank_list[pickIndex].name,
-      bank_id: this.data.bank_list[pickIndex].id,
-    })
+  changeBank(){
+    wx.navigateTo({
+      url: '/pages/bank_management/bank_management?type=cash',
+    });
   },
   //监听提现金额
   changeMoney(e){ 

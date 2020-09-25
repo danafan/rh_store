@@ -1,1 +1,52 @@
 /* pages/bank_management/bank_management.wxss */
+.container{
+  padding: 30rpx;
+}
+.bank_item{
+  margin-bottom: 30rpx;
+  border-radius: 10rpx;
+  background: #fff;
+  height: 200rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 50rpx;
+  position: relative;
+}
+.bank_name{
+  margin-bottom: 36rpx;
+  font-size: 32rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+} 
+.bank_code{
+  font-size: 30rpx;
+  color: #0b0d1d;
+  font-weight: 700; 
+}
+.is_default{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 30rpx;
+  height: 30rpx;
+}
+.add_bank{
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 45rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  height: 90rpx;
+}
+.add_icon{
+  margin-right: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.add_text{
+  font-size: 30rpx;
+  color: #fff;
+}

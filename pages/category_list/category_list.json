@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "店铺设置",
+  "navigationBarTitleText": "管理分类",
   "usingComponents": {
     "modal": "../../components/Modal/modal"
   }

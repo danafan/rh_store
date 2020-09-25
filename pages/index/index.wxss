@@ -20,7 +20,7 @@
 
 .store_name {
   flex: 1;
-  font-size: 32rpx;
+  font-size: 36rpx;
   color: #fff;
   font-weight: 700rpx;
   display: -webkit-box;
@@ -34,8 +34,8 @@
   background: #E2F9F1;
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  width: 150rpx;
+  justify-content: center;
+  width: 130rpx;
   height: 36rpx;
   border-radius: 18rpx;
 }
@@ -43,6 +43,7 @@
   background: #f6f6f6;
 }
 .yuan{
+  margin-right: 8rpx;
   background: #4CB96D;
   border-radius: 50%;
   width: 20rpx;
@@ -54,10 +55,6 @@
 .status_text{
   font-size: 24rpx;
   color: #333;
-}
-.right_icon{
-  width: 20rpx;
-  height: 20rpx;
 }
 .zhan{
   width: 220rpx;
@@ -86,7 +83,7 @@
 }
 
 .validation_text {
-  font-size: 28rpx;
+  font-size: 30rpx;
   color: #fff;
 }
 
@@ -126,7 +123,7 @@
   text-align: center;
   height: 56rpx;
   line-height: 56rpx;
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #0b0d1d;
 }
 
@@ -214,7 +211,7 @@
 }
 
 .data_label {
-  font-size: 26rpx;
+  font-size: 28rpx;
   color: #0b0d1d;
 }
 

@@ -43,8 +43,8 @@
 .order_status {
   width: 150rpx;
   text-align: end;
-  font-size: 26rpx;
-  color: #0b0d1d;
+  font-size: 28rpx;
+  color: #333;
 }
 
 /* 中间套餐信息 */
@@ -59,7 +59,7 @@
 
 .preferential_icon {
   border-radius: 8rpx;
-  width: 120rpx;
+  width: 156rpx;
   height: 120rpx;
 }
 
@@ -76,11 +76,11 @@
 
 .info_item {
   margin-bottom: 5rpx;
-  font-size: 26rpx;
-  color: #8a8a8a;
+  font-size: 28rpx;
+  color: #333;
 }
 .money_active{
-  font-size: 28rpx;
+  font-size: 32rpx;
   color: #ec722e;
   font-weight: 700;
 }

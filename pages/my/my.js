@@ -31,11 +31,31 @@ Page({
       url: '/pages/commodity_management/commodity_management',
     });
   },
+  //菜单管理
+  menuManagement(){
+    wx.navigateTo({
+      url: '/pages/menu_management/menu_management',
+    });
+  },
   //银行卡管理
   bankManagement() {
     wx.navigateTo({
-      url: '/pages/bank_management/bank_management',
+      url: '/pages/bank_management/bank_management?type=my',
     });
+  },
+  //联系我们
+  contactUs(){
+    wx.showModal({
+      title: '拨打电话',
+      content: '13067882143',
+      success: (res) => {
+        if (res.confirm) {
+          wx.makePhoneCall({
+            phoneNumber: '13067882143' 
+          })
+        }
+      }
+    })
   },
   //分享自定义
   onShareAppMessage: function (res) {

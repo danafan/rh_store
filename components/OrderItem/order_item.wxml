@@ -39,7 +39,7 @@
     <!-- 已完成 -->
     <view class="bottom_toast" wx:if="{{order_info.order_status == '2'}}">
       <text>钱包入账金额：</text>
-      <text class="money_active">+¥88</text>
+      <text class="money_active">¥88</text>
     </view>
     <!-- 已退款 -->
     <view class="bottom_toast" wx:if="{{order_info.order_status == '3'}}">已退款至用户系统余额</view>

@@ -8,6 +8,7 @@ Page({
     startTime: 0, //点击时间
     endTime: 0, //抬起时间
     new_price:"", //折扣后价格
+    is_default:true,    //审核通过后是否直接上线
   },
   onLoad(options) {
     wx.setNavigationBarTitle({

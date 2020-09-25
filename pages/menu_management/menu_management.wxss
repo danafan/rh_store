@@ -1,0 +1,143 @@
+/* pages/menu_management/menu_management.wxss */
+
+.menu_container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu_content_box {
+  flex: 1;
+  display: flex;
+}
+
+.cate_list {
+  background: #f0f5f8;
+  height: 100%;
+  width: 200rpx;
+}
+
+.cate_item {
+  background: #f6fbfe;
+  text-align: center;
+  font-size: 32rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+  padding: 30rpx 20rpx;
+}
+
+.active-item {
+  background: #fff;
+}
+
+.menu_list {
+  background: #fff;
+  height: 100%;
+  flex: 1;
+}
+
+.menu_item {
+  border-bottom: 1rpx solid #f6f6f6;
+  padding: 20rpx 15rpx;
+  display: flex;
+}
+
+.menu_img {
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  width: 128rpx;
+  height: 128rpx;
+}
+
+.menu_content {
+  flex: 1;
+  height: 120rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.menu_name {
+  font-size: 30rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+
+.bottom_row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price_box {
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.price_icon {
+  font-size: 22rpx;
+  color: #ff5858;
+}
+
+.price_text {
+  margin-right: 8rpx;
+  font-size: 32rpx;
+  font-weight: 700;
+  color: #ff5858;
+}
+
+.buts_box {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.but {
+  margin-left: 20rpx;
+  border: 1rpx solid #8a8a8a;
+  border-radius: 24rpx;
+  width: 100rpx;
+  height: 48rpx;
+  font-size: 24rpx;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottom_box {
+  border-top: 1rpx solid #f6f6f6;
+  height: 100rpx;
+  display: flex;
+}
+
+.menu_setting {
+  background: #f9f9f9;
+  width: 200rpx;
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+
+.add_menu{
+  flex: 1;
+  height: 100rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.add_icon{
+  margin-right: 10rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+.add_text{
+  font-size: 30rpx;
+  color: #fff;
+}

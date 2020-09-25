@@ -42,11 +42,15 @@
       <view class="toll_list_box">
         <view class="toll_item" bindtap="storeSetting">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
-          <view class="item_label">门店设置</view>
+          <view class="item_label">店铺设置</view>
         </view>
         <view class="toll_item" bindtap="commodityManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">商品管理</view>
+        </view>
+        <view class="toll_item" bindtap="menuManagement">
+          <image class="item_icon" src="../../images/bill_icon.png"></image>
+          <view class="item_label">店铺菜单</view>
         </view>
         <view class="toll_item" bindtap="bankManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
@@ -56,7 +60,7 @@
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">意见反馈</view>
         </view>
-        <view class="toll_item">
+        <view class="toll_item" bindtap="contactUs">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">联系我们</view>
         </view>
