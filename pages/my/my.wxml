@@ -2,7 +2,7 @@
 <view>
   <!-- 顶部黑色 -->
   <view class="top_back">
-    <image class="store_img" src="../../images/banner_01.png"></image>
+    <image class="store_img" mode="aspectFill" src="../../images/banner_01.png"></image>
     <view>
       <view class="store_name">盛宴海鲜自助餐厅</view>
       <view class="phone">13067882143</view>
@@ -46,7 +46,7 @@
         </view>
         <view class="toll_item" bindtap="commodityManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>
-          <view class="item_label">商品管理</view>
+          <view class="item_label">套餐管理</view>
         </view>
         <view class="toll_item" bindtap="menuManagement">
           <image class="item_icon" src="../../images/bill_icon.png"></image>

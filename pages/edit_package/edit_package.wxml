@@ -1,0 +1,27 @@
+<!--pages/edit_package/edit_package.wxml-->
+<view>
+  <view class="package_content_box">
+    <view class="cate_item">
+      <view class="item_top">
+        <input class="cate_name_input" type="text" value="{{item.cate_name}}" placeholder="如 主食" bindinput="changeCateName"></input>
+        <view class="add_cate">添加分类</view>
+      </view>
+      <view class="menu_item">
+        <view class="dian"></view>
+        <view class="menu_name">青椒肉丝</view>
+        <view class="price">¥32</view>
+        <view class="number_box">
+          <image class="icon" src="../../images/jian_icon.png"></image>
+          <input class="number_input" type="number" value="{{menu_item.number}}" bindinput="changeNumber"></input>
+          <image class="icon" src="../../images/add_num.png"></image>
+        </view>
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+  </view>
+  <picker mode="multiSelector" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+    <view class="picker">
+      当前选择：{{multiArray[1][multiIndex[0]]}}
+    </view>
+  </picker>
+</view>

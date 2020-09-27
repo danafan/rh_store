@@ -56,6 +56,6 @@
   </view>
   <view class="add_but" data-sub_type="add" catchtap="editCommodity">
     <image class="add_icon" src="../../images/add_icon.png"></image>
-    <view>新建商品</view>
+    <view>新建套餐</view>
   </view>
 </view>

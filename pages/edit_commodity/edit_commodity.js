@@ -8,11 +8,11 @@ Page({
     startTime: 0, //点击时间
     endTime: 0, //抬起时间
     new_price:"", //折扣后价格
-    is_default:true,    //审核通过后是否直接上线
+    is_default:true,  //审核通过后直接上架
   },
   onLoad(options) {
     wx.setNavigationBarTitle({
-      title: options.sub_type == 'add' ? '添加商品' : '编辑商品',
+      title: options.sub_type == 'add' ? '添加套餐' : '编辑套餐',
     })
     this.setData({
       sub_type: options.sub_type == 'add' ? '1' : '2',

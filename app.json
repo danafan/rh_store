@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/edit_package/edit_package",
+    "pages/edit_commodity/edit_commodity",
     "pages/index/index",
     "pages/order/order",
     "pages/my/my",
@@ -10,7 +12,6 @@
     "pages/store_setting/store_setting",
     "pages/add_bank/add_bank",
     "pages/bank_management/bank_management",
-    "pages/edit_commodity/edit_commodity",
     "pages/cash/cash",
     "pages/bill/bill",
     "pages/complaint/complaint",
