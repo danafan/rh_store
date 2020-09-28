@@ -5,6 +5,10 @@ Component({
       type:String,
       value:''
     },             //弹框标题
+    placeholder:{
+      type: String,
+      value: ''
+    },
     edit_value: {
       type: String,
       value: ''

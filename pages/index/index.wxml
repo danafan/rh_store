@@ -15,17 +15,13 @@
   </view>
   <!-- 扫码模块 -->
   <view class="index_top" style='margin-top:{{startBarHeight + navgationHeight}}px'>
-    <view class="validation_item">
+    <view class="validation_item" bindtap="inputCode">
       <image class="validation_icon" src="../../images/keyboard_icon.png"></image>
       <view class="validation_text">输码核销</view>
     </view>
-    <view class="validation_item">
+    <view class="validation_item" bindtap="scanCode">
       <image class="validation_icon" src="../../images/scan_code.png"></image>
       <view class="validation_text">扫码核销</view>
-    </view>
-    <view class="validation_item">
-      <image class="validation_icon" src="../../images/record_icon.png"></image>
-      <view class="validation_text">核销记录</view>
     </view>
   </view>
   <!-- 下面数据 -->
@@ -106,5 +102,6 @@
       </view>
     </view>
   </view>
-
+  <!-- 输码核销 -->
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="输码核销" placeholder="请输入核销码" wx:if="{{showModal}}" />
 </view>

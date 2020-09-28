@@ -63,10 +63,9 @@
 /* 选择图片组件 */
 
 .upload_box {
-  border: 1rpx solid #e6e6e6;
   width: 182rpx;
   height: 140rpx;
-  background: #f6f6f6;
+  background: #F1F6F9;
   border-radius: 5rpx;
   display: flex;
   flex-direction: column;
@@ -134,55 +133,124 @@
   align-items: center;
   justify-content: flex-end;
 }
-.margin_top{
-  margin-top: 20rpx;
-}
-.edit_but{
-  font-size: 28rpx;
-  color: #ec722e;
-}
-.right_icon{
-  margin-left: 5rpx;
-  width: 25rpx;
-  height: 25rpx;
-}
-.total_box{
-  margin-left: 15rpx;
-  font-size: 28rpx;
-  color: #333;
-}
-.current_price_box {
-  display: table-cell;
-  vertical-align: bottom;
-}
-.selected{
-  font-size: 28rpx;
-  color: #8a8a8a;
-}
-.select_price_icon {
-  font-size: 28rpx;
-  color: #333;
-}
-.current_price{
-  color: #333;
-  font-size: 40rpx;
-  font-weight: 700;
-}
-.preview_box{
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-}
-.preview_but{
+.add_cate{
+  border-radius: 25rpx;
   background: #ec722e;
-  border-radius: 24rpx;
-  width: 100rpx;
-  height: 48rpx;
-  font-size: 24rpx;
-  color: #fff;
+  width: 130rpx;
+  height: 50rpx;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.add_icon{
+  margin-right: 5rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+.edit_but{
+  font-size: 25rpx;
+  color: #fff;
+}
+.margin_top{
+  margin-top: 30rpx;
+}
+/* 套餐内容 */
+.package_content{
+  padding: 30rpx 15rpx 30rpx;
+  background: #F1F6F9;
+}
+
+.item_top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.cate_input{
+  flex: 1;
+  font-size: 30rpx;
+}
+.cate_name{
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.cate_name_input{
+  color: #8a8a8a;
+}
+.delete_cate{
+  width: 40rpx;
+  height: 40rpx;
+}
+.menu_item{
+  margin-top: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #8a8a8a;
+}
+.item_left{
+  display: flex;
+  align-items: center;
+  width: 65%;
+}
+.close_icon{
+  background: #8a8a8a;
+  margin-right: 15rpx;
+  border-radius: 50%;
+  width: 10rpx;
+  height: 10rpx;
+}
+.menu_name{
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.item_right{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.number_box{
+  display: flex;
+  align-items: center;
+}
+.icon{
+  width: 38rpx;
+  height: 38rpx;
+}
+.number_input{
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+  color: #333;
+}
+.add_menu{
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  color: #ec722e;
+}
+.total_price{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+   color: #0b0d1d;
+}
+.total_box{
+  font-size: 26rpx;
+}
+.current_price_box{
+  display: table-cell;
+  vertical-align: bottom;
+}
+.select_price_icon{
+  font-size: 26rpx;
+}
+.current_price{
+  font-size: 32rpx;
+  font-weight: 700;
 }
 .sub_but {
   margin: 50rpx auto;

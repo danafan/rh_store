@@ -3,7 +3,7 @@
   <view class="commodity_content">
     <view class="item_row">
       <view class="label">套餐名称</view>
-      <input class="input_box" type="text" value="{{store_name}}" data-type="store_name" placeholder="30字以内..." bindinput="changeVal"></input>
+      <input class="input_box" type="text" value="{{package_name}}" data-type="package_name" placeholder="30字以内..." bindinput="changeVal"></input>
     </view>
     <view class="item_row">
       <view class="label">套餐图片</view>
@@ -28,20 +28,46 @@
       <view class="label">套餐内容</view>
       <view class="content_box">
         <view class="content_row">
-          <view class="edit_but">编辑</view>
-          <image class="right_icon" src="../../images/right.png"></image>
-        </view>
-        <view class="content_row margin_top">
-          <view class="selected">已选14件商品</view>
-          <view class="total_box">合计：</view>
-          <view class="current_price_box">
-            <text class="select_price_icon">¥</text>
-            <text class="current_price">198</text>
+          <view class="add_cate" bindtap="addPackItem">
+            <image class="add_icon" src="../../images/add_icon.png"></image>
+            <view class="edit_but">添加</view>
           </view>
         </view>
-        <view class="preview_box margin_top">
-          <view class="preview_but">预览</view>
+        <view class="package_content margin_top" wx:if="{{package_list.length > 0}}">
+          <view class="cate_item {{index >= 1?'margin_top':''}}" wx:for="{{package_list}}" wx:key="cate_name" wx:for-index="index">
+            <view class="item_top">
+              <view class="cate_name" wx:if="{{item.cate_name != ''}}" data-index="{{index}}" data-cate_name="{{item.cate_name}}" bindtap="editCateName">{{item.cate_name}}</view>
+              <view class="cate_name_input" wx:else data-index="{{index}}" data-cate_name="{{item.cate_name}}" bindtap="editCateName">分类名称 如【主食3选1】</view>
+              <image class="delete_cate" src="../../images/delete_cate.png" data-index="{{idnex}}" bindtap="deleteCate"></image>
+            </view>
+            <view class="menu_item" wx:for="{{item.menu_list}}" wx:key="name" wx:for-item="menu_item" wx:for-index="i">
+              <view class="item_left">
+                <view class="close_icon"></view>
+                <view class="menu_name">{{menu_item.name}}</view>
+              </view>
+              <view class="item_right">
+                <view>¥{{menu_item.price}}</view>
+                <view class="number_box">
+                  <image class="icon" src="../../images/jian_icon.png" data-index="{{index}}" data-i="{{i}}" data-type="jian" bindtap="changeNumber"></image>
+                  <view class="number_input">{{menu_item.number}}</view>
+                  <image class="icon" src="../../images/add_num.png" data-index="{{index}}" data-i="{{i}}" data-type="jia" bindtap="changeNumber"></image>
+                </view>
+              </view>
+            </view>
+            <picker mode="multiSelector" data-index="{{index}}" bindchange="bindMultiPickerChange" bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+              <view class="add_menu">添加菜品</view>
+            </picker>
+          </view>
+          <!-- 计算 -->
+          <view class="total_price">
+            <view class="total_box">合计：</view>
+            <view class="current_price_box">
+              <text class="select_price_icon">¥</text>
+              <text class="current_price">{{total_price}}</text>
+            </view>
+          </view>
         </view>
+
       </view>
     </view>
     <view class="item_row">
@@ -57,4 +83,6 @@
     </view>
   </view>
   <view class="sub_but" bindtap="submitAudit">提交审核</view>
+  <!-- 添加分类名称 -->
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="分类名称" placeholder="分类名称 如 【主食3选1】" edit_value="{{edit_value}}" wx:if="{{showModal}}" />
 </view>

@@ -24,6 +24,7 @@ Page({
     end_date: "", //自定义默认结束时间
     start_time: "", //可传递的开始时间
     end_time: "", //可传递的结束时间
+    showModal:false,  //默认输码核销弹框不显示
   },
   onLoad: function(options) {
     //获取顶部导航栏信息
@@ -39,6 +40,35 @@ Page({
       end_time: this.getLast3Month('1').now
     }
     this.getIndexInfo(req);
+  },
+  //输码核销
+  inputCode(){
+    this.setData({
+      showModal: true
+    })
+  },
+  //扫码核销
+  scanCode(){
+    wx.scanCode({
+      onlyFromCamera: true,
+      success(res) {
+        console.log(res)
+      }
+    })
+  },
+  //取消
+  onClose() {
+    this.setData({
+      showModal: false
+    })
+  },
+  //确认
+  submitContent(e) {
+    let edit_value = e.detail.edit_value;
+    console.log(edit_value)
+    this.setData({
+      showModal: false
+    })
   },
   //切换数据查看范围
   checkType(e) {
