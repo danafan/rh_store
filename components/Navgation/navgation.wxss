@@ -1,0 +1,26 @@
+/* components/Navgation/navgation.wxss */
+/* 导航栏 */
+
+.navgation_box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #0b0d1d;
+  z-index: 99;
+}
+
+.title_text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 30rpx;
+  position: relative;
+}
+.go_back{
+  position: absolute;
+  left: 15rpx;
+  width: 41rpx;
+  height: 41rpx;
+}

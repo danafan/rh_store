@@ -1,6 +1,11 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/signing/signing",
+    "pages/user_info/user_info",
+    "pages/store_info/store_info",
+    "pages/qualification/qualification",
+    "pages/registered/registered",
     "pages/edit_commodity/edit_commodity",
     "pages/order/order",
     "pages/my/my",
@@ -14,8 +19,7 @@
     "pages/cash/cash",
     "pages/bill/bill",
     "pages/complaint/complaint",
-    "pages/evaluation/evaluation",
-    "pages/preferential/preferential"
+    "pages/evaluation/evaluation"
   ],
   "tabBar": {
     "color": "#8a8a8a",

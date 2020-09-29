@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navgation": "/components/Navgation/navgation",
+    "upload_file": "/components/UploadFile/upload_file"
+  }
+}

@@ -1,0 +1,24 @@
+<!--pages/qualification/qualification.wxml-->
+<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<!-- 顶部标题栏 -->
+  <navgation title="资质认证"/>
+  <view class="upload_box">
+    <view class="upload_title">营业执照</view>
+    <upload_file img_type="business_license" bind:onEmit="uploadImg" wx:if="{{business_license == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{business_license}}"></image>
+      <view class="close" data-type="business_license" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+    <view class="upload_title">食品经营许可证</view>
+    <upload_file img_type="license_img" bind:onEmit="uploadImg" wx:if="{{license_img == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{license_img}}"></image>
+      <view class="close" data-type="license_img" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="submit" bindtap="submit">提交</view>
+</view>

@@ -1,0 +1,32 @@
+<!--pages/user_info/user_info.wxml-->
+<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<!-- 顶部标题栏 -->
+  <navgation title="身份验证"/>
+  <view class="input_item">
+    <view class="label">姓名</view>
+    <input class="input" type="text" value="{{admin_name}}" data-type="admin_name" bindinput="changeValue" placeholder="请输入法人姓名" />
+  </view>
+  <view class="input_item">
+    <view class="label">身份证号</view>
+    <input class="input" type="idcard" value="{{id_number}}" data-type="id_number" bindinput="changeValue" placeholder="请输入身份证号" />
+  </view>
+  <view class="upload_box">
+    <view class="upload_title">身份证正面</view>
+    <upload_file img_type="id_card_front" bind:onEmit="uploadImg" wx:if="{{id_card_front == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{id_card_front}}"></image>
+      <view class="close" data-type="id_card_front" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+    <view class="upload_title">身份证反面</view>
+    <upload_file img_type="id_card_back" bind:onEmit="uploadImg" wx:if="{{id_card_back == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{id_card_back}}"></image>
+      <view class="close" data-type="id_card_back" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="submit" bindtap="submit">提交</view>
+</view>

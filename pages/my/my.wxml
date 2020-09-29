@@ -57,6 +57,7 @@
           <view class="item_label">银行卡</view>
         </view>
         <view class="toll_item">
+          <button class="contact" open-type="feedback"></button>
           <image class="item_icon" src="../../images/bill_icon.png"></image>
           <view class="item_label">意见反馈</view>
         </view>

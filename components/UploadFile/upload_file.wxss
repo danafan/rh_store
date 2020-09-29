@@ -1,0 +1,15 @@
+/* components/UploadFile/upload_file.wxss */
+
+.upload_box {
+  width: 338rpx;
+  height: 260rpx;
+  background: #f1f6f9;
+  border-radius: 8rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.upload_icon{
+  width: 88rpx;
+  height: 88rpx;
+}

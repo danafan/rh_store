@@ -1,0 +1,17 @@
+<!--pages/signing/signing.wxml-->
+<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<!-- 顶部标题栏 -->
+  <navgation title="签约"/>
+  <view class="index_box">
+    <image class="index_img" src="../../images/index_img.png"></image>
+    <view class="index_toast">签约后可享受服务</view>
+    <view class="cash_but" bindtap="signing">立即签约</view>
+  </view>
+  <view class="about_box">
+    <view class="title">产品介绍</view>
+    <view class="toast_text">「热乎单管家」是本地美食推荐平台‘热乎优选’的商家端系统，单管家包括订单管理、用户评价管理、财务管理、商品管理等主要功能，实现一站式服务，产品具有操作简单，功能全面，体验流畅等特色
+    </view>
+    <view class="toast_text">注册流程：手机号登录 -> 法人实名认证 -> 店铺信息 -> 资质认证 -> 完成注册</view>
+    <view class="toast_text">注册需准备材料：管理员手机号（用于登录系统）、常用联系人信息、法人身份证、店铺营业执照、店铺食品经营许可证</view>
+  </view>
+</view>

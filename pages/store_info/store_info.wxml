@@ -1,0 +1,46 @@
+<!--pages/store_info/store_info.wxml-->
+<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<!-- 顶部标题栏 -->
+  <navgation title="店铺信息"/>
+  <view class="input_item">
+    <view class="label">店铺名称</view>
+    <input class="input" type="text" value="{{store_name}}" data-type="store_name" bindinput="changeValue" placeholder="店铺名称（需与营业执照一致）" />
+  </view>
+  <view class="input_item">
+    <view class="label">经营品类</view>
+    <picker style="flex:1" range-key="name" bindchange="changeCate" range="{{category_list}}">
+      <view class="cate_box">
+        <view class="cate_text" wx:if="{{cate_id == ''}}">请选择经营品类</view>
+        <view class="cate_text_active" wx:else>{{cate_name}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </picker>
+  </view>
+  <view class="upload_box">
+    <view class="upload_title">店铺门脸图</view>
+    <upload_file img_type="store_face_img" bind:onEmit="uploadImg" wx:if="{{store_face_img == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{store_face_img}}"></image>
+      <view class="close" data-type="store_face_img" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+    <view class="upload_title">店内环境图</view>
+    <upload_file img_type="store_internal_img" bind:onEmit="uploadImg" wx:if="{{store_internal_img == ''}}" />
+    <view class="img_box" wx:else>
+      <image class="card_img" src="{{store_internal_img}}"></image>
+      <view class="close" data-type="store_internal_img" bindtap="close">
+        <image class="close_icon" src="../../images/close_icon.png"></image>
+      </view>
+    </view>
+  </view>
+  <view class="input_item">
+    <view class="label">联系人</view>
+    <input class="input" type="text" value="{{contact_name}}" data-type="contact_name" bindinput="changeValue" placeholder="联系人姓名" />
+  </view>
+  <view class="input_item">
+    <view class="label">联系电话</view>
+    <input class="input" type="text" value="{{contact_phone}}" data-type="contact_phone" bindinput="changeValue" placeholder="联系人电话" />
+  </view>
+  <view class="submit" bindtap="submit">提交</view>
+</view>

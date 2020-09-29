@@ -1,0 +1,8 @@
+<!--components/Navgation/navgation.wxml-->
+<view class="navgation_box">
+  <view style='height:{{startBarHeight}}px'></view>
+  <view class="title_text" style="height:{{navgationHeight}}px">
+    <image class="go_back" src="../../images/go_back.png" bindtap="goBack" wx:if="{{show_back == 1}}"></image>
+    <text>{{title}}</text>
+  </view>
+</view>

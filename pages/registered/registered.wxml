@@ -1,0 +1,15 @@
+<!--pages/registered/registered.wxml-->
+<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<!-- 顶部标题栏 -->
+  <navgation title="手机号登录"/>
+  <view class="login_container">
+  <view class="login_title">手机号登录</view>
+  <input class="input" value="{{phone}}" type="number" bindinput="changePhone" placeholder-style="color:#B9C0D4" placeholder="请输入手机号码" />
+  <view class="code_box">
+    <input class="input code_input" type="number" bindinput="changeCode" placeholder-style="color:#B9C0D4" placeholder="验证码" />
+    <view class="code_text {{!notBut?'code_text_active':''}}" bindtap="getCode">{{codebutTxt}}</view>
+  </view>
+  <view class="toast">如第一次登录将注册账号</view>
+  <view class="login" bindtap="login">登录</view>
+</view>
+</view>

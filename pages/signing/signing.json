@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "签约",
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navgation": "/components/Navgation/navgation"
+  }
+}

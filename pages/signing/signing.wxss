@@ -1,0 +1,53 @@
+/* pages/signing/signing.wxss */
+page{
+  background: #fff;
+}
+.index_box{
+  margin-top: 118rpx;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+  padding-bottom: 52rpx;
+}
+.index_img{
+  width: 494rpx;
+  height: 342rpx;
+}
+.index_toast{
+  margin-top: 44rpx;
+  margin-bottom: 44rpx;
+  color: #333333;
+  font-size: 36rpx;
+}
+.about_box{
+  padding-bottom: 30rpx;
+  margin-top: 28rpx;
+  background: #fff;
+  padding-left: 48rpx;
+  padding-right: 48rpx;
+}
+.title{
+  border-bottom: 1rpx solid #f6f6f6;
+  height: 84rpx;
+  line-height: 84rpx;
+  color: #333333;
+  font-size: 32rpx;
+  font-weight:600;
+}
+.toast_text{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #8a8a8a;
+}
+.cash_but {
+  margin: 20rpx auto;
+  border-radius: 45rpx;
+  background-image: linear-gradient(to left, #e84d2a, #ec722e);
+  width: 80%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #fff;
+}

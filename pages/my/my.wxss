@@ -135,8 +135,17 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
-
+.contact{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1;
+  opacity: 0;
+}
 .item_icon {
   margin-bottom: 8rpx;
   width: 42rpx;
