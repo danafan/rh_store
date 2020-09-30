@@ -6,9 +6,9 @@
     <!-- 标题 -->
     <view class="title_text" style="height:{{navgationHeight}}px">
       <view class="store_name">盛宴海鲜自助餐厅</view>
-      <view class="store_status {{store_status == '2'?'no_store_status':''}}">
-        <view class="yuan {{store_status == '2'?'no_yuan':''}}"></view>
-        <view class="status_text">{{store_status == '1'?'营业中':'已打烊'}}</view>
+      <view class="store_status {{store_status != '1'?'no_store_status':''}}">
+        <view class="yuan {{store_status != '1'?'no_yuan':''}}"></view>
+        <view class="status_text">{{store_status == '1'?'营业中':store_status == '2'?'已打烊':'停业中'}}</view>
       </view>
       <view class="zhan"></view>
     </view>
@@ -23,6 +23,12 @@
       <image class="validation_icon" src="../../images/scan_code.png"></image>
       <view class="validation_text">扫码核销</view>
     </view>
+  </view>
+  <!-- 公告 -->
+  <view class="announcement" bindtap="announcementList">
+    <image class="announcement_icon" src="../../images/announcement_icon.png"></image>
+    <view class="announcement_content">我说你这小子，你是学好难学坏不用教啊我说你这小子，你是学好难学坏不用教啊</view>
+    <image class="right_icon" src="../../images/right.png"></image>
   </view>
   <!-- 下面数据 -->
   <view class="content_box">

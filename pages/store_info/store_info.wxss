@@ -11,6 +11,20 @@ page{
   display: flex;
   align-items: center;
 }
+.item_content{
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.val{
+  font-size: 30rpx;
+  color: #8a8a8a;
+}
+.margin{
+  margin-left: 15rpx;
+  margin-right: 15rpx;
+}
 .label {
   width: 184rpx;
   font-size: 30rpx;
@@ -84,7 +98,11 @@ page{
   width: 30rpx;
   height: 30rpx;
 }
-
+.img_toast{
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: #ec722e;
+}
 .submit {
   margin: 50rpx auto;
   border-radius: 45rpx;

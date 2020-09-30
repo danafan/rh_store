@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/signing/signing",
-    "pages/user_info/user_info",
     "pages/store_info/store_info",
+    "pages/qualification_info/qualification_info",
+    "pages/store_setting/store_setting",
     "pages/qualification/qualification",
+    "pages/user_info/user_info",
+    "pages/announcement/announcement",
+    "pages/signing/signing",
     "pages/registered/registered",
     "pages/edit_commodity/edit_commodity",
     "pages/order/order",
@@ -13,7 +16,6 @@
     "pages/edit_menu/edit_menu",
     "pages/commodity_management/commodity_management",
     "pages/category_list/category_list",
-    "pages/store_setting/store_setting",
     "pages/add_bank/add_bank",
     "pages/bank_management/bank_management",
     "pages/cash/cash",

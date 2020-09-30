@@ -3,19 +3,11 @@
   <view class="store_content">
     <view class="content_item">
       <view class="item_label">店铺名称</view>
-      <view class="item_content" data-edit_id="1" bindtap="editFun">
-        <view class="val">{{store_name}}</view>
-        <image class="right_icon" src="../../images/right.png"></image>
-      </view>
+      <view class="val">{{store_name}}</view>
     </view>
     <view class="content_item">
       <view class="item_label">经营品类</view>
-      <picker range-key="name" bindchange="changeCate" range="{{category_list}}">
-        <view class="item_content">
-          <view class="val">{{active_cate_name}}</view>
-          <image class="right_icon" src="../../images/right.png"></image>
-        </view>
-      </picker>
+      <view class="val">{{active_cate_name}}</view>
     </view>
     <view class="content_item">
       <view class="item_label">
@@ -23,7 +15,7 @@
         <view class="toast">*每月允许修改一次</view>
       </view>
       <view class="item_content" bindtap="editStoreImg">
-        <image class="store_img" mode="aspectFill" src="../../images/banner_01.png"></image>
+        <image class="store_img" mode="aspectFill" src="{{store_img}}"></image>
         <image class="right_icon" src="../../images/right.png"></image>
       </view>
     </view>
@@ -39,13 +31,6 @@
       </picker>
     </view>
     <view class="content_item">
-      <view class="item_label">店铺电话</view>
-      <view class="item_content" data-edit_id="2" bindtap="editFun">
-        <view class="val">{{phone}}</view>
-        <image class="right_icon" src="../../images/right.png"></image>
-      </view>
-    </view>
-    <view class="content_item">
       <view class="item_label">店铺地址</view>
       <view class="item_content" bindtap="chooseLocation">
         <view class="val">{{location_address}}</view>
@@ -54,8 +39,27 @@
     </view>
     <view class="content_item">
       <view class="item_label">营业时间</view>
-      <view class="item_content" data-edit_id="3" bindtap="editFun">
-        <view class="val">{{business_hours}}</view>
+      <view class="item_content">
+        <picker mode="time" start="00:00" end="23:59" data-type="start_time" bindchange="changeTime">
+          <view class="val">{{start_time}}</view>
+        </picker>
+        <view class="val margin"> - </view>
+        <picker mode="time" start="00:00" end="23:59" data-type="end_time" bindchange="changeTime">
+          <view class="val">{{end_time}}</view>
+        </picker>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">联系人</view>
+      <view class="item_content" data-edit_type="concat_name" bindtap="editFun">
+        <view class="val">{{concat_name}}</view>
+        <image class="right_icon" src="../../images/right.png"></image>
+      </view>
+    </view>
+    <view class="content_item">
+      <view class="item_label">联系电话</view>
+      <view class="item_content" data-edit_type="concat_phone" bindtap="editFun">
+        <view class="val">{{concat_phone}}</view>
         <image class="right_icon" src="../../images/right.png"></image>
       </view>
     </view>
@@ -63,17 +67,11 @@
   <view class="store_content">
     <view class="content_item">
       <view class="item_label">营业资质</view>
-      <view class="item_content">
-        <image class="right_icon" src="../../images/right.png"></image>
-      </view>
-    </view>
-    <view class="content_item">
-      <view class="item_label">合同协议</view>
-      <view class="item_content">
+      <view class="item_content" bindtap="qualificationInfo">
         <image class="right_icon" src="../../images/right.png"></image>
       </view>
     </view>
   </view>
   <!-- 修改店铺名称、店铺电话、营业时间 -->
-  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="{{title}}" edit_value="{{edit_value}}" wx:if="{{showModal}}"/>
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="{{title}}" edit_value="{{edit_value}}" wx:if="{{showModal}}" />
 </view>

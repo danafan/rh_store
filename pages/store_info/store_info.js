@@ -1,14 +1,15 @@
 // pages/store_info/store_info.js
 const app = getApp();
+const locationApi = require('../../utils/getLocation.js')
 Page({
   data: {
     store_name: "", //店铺名称
     cate_id: "", //品类id
     cate_name: "", //品类名称
+    store_address:"", //店铺地址
     contact_name: "", //联系人姓名
     contact_phone: "", //联系人电话
     store_face_img: "", //店铺门脸图
-    store_internal_img: "", //店铺环境图
     category_list: [{
       id: '1',
       name: '火锅'
@@ -19,6 +20,10 @@ Page({
       id: '3',
       name: '海鲜'
     }], //经营品类列表
+    start_time: '', //开张时间
+    end_time: '', //打烊时间
+    start_timeStamp: 0,
+    end_timeStamp: 0,
     startBarHeight: app.globalData.startBarHeight,
     navgationHeight: app.globalData.navgationHeight
   },
@@ -57,6 +62,48 @@ Page({
       cate_id: this.data.category_list[index].id
     })
   },
+  //切换时间
+  changeTime(e) {
+    let value = e.detail.value;
+    let timeStamp = parseInt(value.split(':')[0]) * 3600 + parseInt(value.split(':')[1]) * 60;
+    console.log(e)
+    let type = e.target.dataset.type;
+    if (type == 'start_time') {
+      if (this.data.end_timeStamp != 0 && timeStamp > this.data.end_timeStamp) {
+        wx.showToast({
+          title: '开始时间不能大于结束时间',
+          icon: "none",
+          mask: true,
+          duration: 1500
+        })
+      } else {
+        this.setData({
+          start_time: value,
+          start_timeStamp: timeStamp
+        })
+      }
+    } else {
+      if (this.data.start_timeStamp != 0 && timeStamp < this.data.start_timeStamp) {
+        wx.showToast({
+          title: '结束时间不能小于开始时间',
+          icon: "none",
+          mask: true,
+          duration: 1500
+        })
+      } else {
+        this.setData({
+          end_time: value,
+          end_timeStamp: timeStamp
+        })
+      }
+    }
+  },
+  //修改店铺地址
+  chooseLocation() {
+    locationApi.chooseLocation().then(res => {
+      console.log(res)
+    })
+  },
   //提交
   submit() {
     wx.reLaunch({
@@ -66,10 +113,12 @@ Page({
       this.toastFun('请填写店铺名称');
     } else if (this.data.cate_name == '') {
       this.toastFun('请选择经营品类');
+    } else if (this.data.store_address == '') {
+      this.toastFun('请选择店铺地址');
+    } else if (this.data.start_time == '' || this.data.end_time == '') {
+      this.toastFun('请选择完善营业时间');
     } else if (this.data.store_face_img == '') {
-      this.toastFun('请上传店铺门脸图');
-    } else if (this.data.store_internal_img == '') {
-      this.toastFun('请上传店内环境图');
+      this.toastFun('请上传店铺主图');
     } else if (this.data.contact_name == '') {
       this.toastFun('请填写联系人姓名');
     } else if (this.data.contact_phone == '') {
@@ -78,8 +127,10 @@ Page({
       let req = {
         store_name: this.data.store_name,
         cate_name: this.data.cate_name,
+        store_address: this.data.store_address,
+        start_time: this.data.start_time, 
+        end_time: this.data.end_time, 
         store_face_img: this.data.store_face_img,
-        store_internal_img: this.data.store_internal_img,
         contact_name: this.data.contact_name,
         contact_phone: this.data.contact_phone,
       }

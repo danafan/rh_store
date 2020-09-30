@@ -3,9 +3,9 @@
 const app = getApp()
 Page({
   data: {
-    store_status:1,   //1:营业中；2:已打烊
-    startBarHeight: 0,
-    navgationHeight: 0,
+    store_status: 1,   //1:营业中；2:已打烊；3:停业中
+    startBarHeight: app.globalData.startBarHeight,
+    navgationHeight: app.globalData.navgationHeight,
     date_type_list: [{
       id: '1',
       name: '今日'
@@ -27,8 +27,6 @@ Page({
     showModal:false,  //默认输码核销弹框不显示
   },
   onLoad: function(options) {
-    //获取顶部导航栏信息
-    this.setNavigation();
     //自定义时间区间的开始结束范围
     this.setData({
       start_date: this.getLast3Month('4').last,
@@ -47,6 +45,20 @@ Page({
       showModal: true
     })
   },
+  //输码核销取消
+  onClose() {
+    this.setData({
+      showModal: false
+    })
+  },
+  //输码核销确认
+  submitContent(e) {
+    let edit_value = e.detail.edit_value;
+    console.log(edit_value)
+    this.setData({
+      showModal: false
+    })
+  },
   //扫码核销
   scanCode(){
     wx.scanCode({
@@ -54,20 +66,6 @@ Page({
       success(res) {
         console.log(res)
       }
-    })
-  },
-  //取消
-  onClose() {
-    this.setData({
-      showModal: false
-    })
-  },
-  //确认
-  submitContent(e) {
-    let edit_value = e.detail.edit_value;
-    console.log(edit_value)
-    this.setData({
-      showModal: false
     })
   },
   //切换数据查看范围
@@ -185,22 +183,11 @@ Page({
       return num;
     }
   },
-  //获取顶部导航栏信息
-  setNavigation() {
-    let menuButtonObject = wx.getMenuButtonBoundingClientRect();
-    wx.getSystemInfo({
-      success: res => {
-        let statusBarHeight = res.statusBarHeight,
-          navHeight = statusBarHeight + menuButtonObject.height + (menuButtonObject.top - statusBarHeight) * 2; //导航高度
-        this.setData({
-          startBarHeight: statusBarHeight,
-          navgationHeight: navHeight - statusBarHeight
-        })
-      },
-      fail(err) {
-        console.log(err);
-      }
-    })
+  //公告列表
+  announcementList(){
+    wx.navigateTo({
+      url: '/pages/announcement/announcement',
+    });
   }
 
 })

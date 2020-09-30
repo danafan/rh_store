@@ -86,6 +86,36 @@
   font-size: 30rpx;
   color: #fff;
 }
+/* 公告 */
+.announcement{
+  background: #fff;
+  height: 86rpx;
+  padding-left: 15rpx;
+  padding-right: 15rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.announcement_icon{
+  margin-right: 15rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.announcement_content{
+  flex: 1;
+  font-size: 28rpx;
+  color: #333;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+.right_icon{
+  margin-left: 15rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
 
 /* 下面内容 */
 

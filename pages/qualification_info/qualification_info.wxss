@@ -1,0 +1,16 @@
+/* pages/qualification_info/qualification_info.wxss */
+page{
+  background: #fff;
+  padding-left: 30rpx;
+}
+.upload_title{
+  margin-top: 30rpx;
+  margin-bottom: 10rpx;
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+.card_img{
+  border-radius: 8rpx;
+  width: 338rpx;
+  height: 260rpx;
+}

@@ -9,36 +9,27 @@ Component({
   methods: {
     //点击选择图片
     chooseImg() {
-      wx.chooseImage({
+      wx.chooseMedia({
         count: 1,
+        mediaType: ['image'],
+        sourceType: ['album', 'camera'],
         success: (res) => {
-          let filePath = res.tempFilePaths[0];
+          let tempFilePath = res.tempFiles[0].tempFilePath;
           let req = {
             img_type: this.data.img_type,
-            filePath: filePath
+            filePath: tempFilePath
           }
           this.triggerEvent('onEmit', req);
           // wx.uploadFile({
-          //   url: api.imgupload, //上传图片
-          //   filePath: e.detail.path,
+          //   url: 'https://example.weixin.qq.com/upload', //仅为示例，非真实的接口地址
+          //   filePath: tempFilePaths[0],
           //   name: 'file',
           //   formData: {
-          //     _3rd_session: wx.getStorageSync('3rd_session')
+          //     'user': 'test'
           //   },
-          //   success: (res) => {
-          //     if (JSON.parse(res.data).code == 1) {
-          //       if (e.detail.card_type == 'front') {
-          //         this.setData({
-          //           show_card_front: e.detail.path,
-          //           id_card_front: JSON.parse(res.data).data
-          //         })
-          //       } else {
-          //         this.setData({
-          //           show_card_back: e.detail.path,
-          //           id_card_back: JSON.parse(res.data).data
-          //         })
-          //       };
-          //     }
+          //   success(res) {
+          //     const data = res.data
+          //     //do something
           //   }
           // })
         }

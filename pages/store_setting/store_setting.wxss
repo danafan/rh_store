@@ -22,19 +22,25 @@
   font-size: 24rpx;
 }
 .item_content{
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 }
 .val{
   font-size: 28rpx;
   color: #8a8a8a;
+}
+.margin{
+  margin-left: 15rpx;
+  margin-right: 15rpx;
 }
 .business{
   color: #4CB96D;
 }
 .store_img{
   border-radius: 5rpx;
-  width: 150rpx;
+  width: 130rpx;
   height: 100rpx;
 }
 .right_icon{

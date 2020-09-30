@@ -1,0 +1,11 @@
+<!--pages/announcement/announcement.wxml-->
+<view>
+  <view class="announcement_item" bindtap="readContent">
+    <view class="create_time">2020-09-20 13:42:34</view>
+    <view class="content unread_content">这一条是未读的公告，要返回是否已读的参数，点击查看详情之后标记为已读，颜色变为黑色</view>
+  </view>
+  <view class="announcement_item">
+    <view class="create_time">2020-09-20 13:42:34</view>
+    <view class="content">于是大清朝就开始流行鬼故事，纪晓岚也是个文化人，写点啥呢，不能随便写，写了个阅微草堂笔记于是大清朝就开始流行鬼故事，纪晓岚也是个文化人，写点啥呢，不能随便写，写了个阅微草堂笔记</view>
+  </view>
+</view>

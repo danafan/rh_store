@@ -1,0 +1,11 @@
+<!--pages/qualification_info/qualification_info.wxml-->
+<view>
+  <view class="upload_title">法人身份证正面</view>
+  <image class="card_img" src="{{id_card_front}}" data-img_url="{{id_card_front}}" bindtap="previewImg"></image>
+  <view class="upload_title">法人身份证反面</view>
+  <image class="card_img" src="{{id_card_back}}" data-img_url="{{id_card_back}}" bindtap="previewImg"></image>
+  <view class="upload_title">营业执照</view>
+  <image class="card_img" src="{{business_license}}" data-img_url="{{business_license}}" bindtap="previewImg"></image>
+  <view class="upload_title">食品经营许可证</view>
+  <image class="card_img" src="{{license_img}}" data-img_url="{{license_img}}" bindtap="previewImg"></image>
+</view>
