@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加套餐",
+  "usingComponents": {
+    "package_cate_modal": "../../components/PackageCateModal/package_cate_modal"
+  }
+}

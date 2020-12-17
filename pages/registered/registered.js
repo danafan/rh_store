@@ -2,6 +2,9 @@
 const app = getApp();
 Page({
   data: {
+    page_type:"",
+    navgation_title:"",   //页面标题文字
+    button_text:"",       //按钮文字
     isClick: false, //默认登录按钮不高亮
     phone: "", //手机号
     code: "", //验证码
@@ -10,6 +13,13 @@ Page({
     codebutTxt: "获取验证码", //获取验证码文字
     startBarHeight: app.globalData.startBarHeight,
     navgationHeight: app.globalData.navgationHeight
+  },
+  onLoad(e){
+    this.setData({
+      page_type:e.type,
+      navgation_title:e.type == 'sign' ? '新商户签约' : '商户登录',
+      button_text:e.type == 'sign' ? '提交' : '登录'
+    })
   },
   //监听输入的手机号
   changePhone(v) {
@@ -39,11 +49,18 @@ Page({
       })
     }
   },
-  //登录
+  //提交或登录
   login() {
-    wx.reLaunch({
-      url: '/pages/user_info/user_info'
-    })
+    if(this.data.page_type == 'sign'){
+      wx.reLaunch({
+        url: '/pages/user_info/user_info'
+      })
+    }else{
+      wx.reLaunch({
+        url: '/pages/index/index'
+      })
+    }
+    
     if (this.data.phone == "") {
       wx.showToast({
         title: '请输入手机号',
@@ -61,7 +78,8 @@ Page({
     } else {
       let req = {
         phone: this.data.phone,
-        sms_code: this.data.code
+        sms_code: this.data.code,
+        type:this.data.page_type
       }
       console.log(req)
     }

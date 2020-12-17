@@ -25,6 +25,7 @@ Page({
     start_time: "", //可传递的开始时间
     end_time: "", //可传递的结束时间
     showModal:false,  //默认输码核销弹框不显示
+    show_order_modal:false,   //订单核销详情
   },
   onLoad: function(options) {
     //自定义时间区间的开始结束范围
@@ -63,9 +64,27 @@ Page({
   scanCode(){
     wx.scanCode({
       onlyFromCamera: true,
-      success(res) {
-        console.log(res)
+      success:(res) => {
+        this.setData({
+          show_order_modal:true
+        })
+        // wx.showModal({
+        //   title: '提示',
+        //   content: res.result
+        // })
       }
+    })
+  },
+  //取消核销
+  cancel(){
+    this.setData({
+      show_order_modal:false
+    })
+  },
+  //确认核销
+  confirm(){
+    this.setData({
+      show_order_modal:false
     })
   },
   //切换数据查看范围

@@ -1,0 +1,68 @@
+/* components/PackageCateModal/package_cate_nodal.wxss */
+.modal_box{
+  background: rgba(0, 0, 0, .6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.edit_box{
+  background: #fff;
+  width: 580rpx;
+  border-radius: 10rpx;
+}
+.title{
+  border-bottom: 1rpx solid #f6f6f6;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.edit_content{
+  padding: 30rpx;
+}
+.edit_input{
+  margin-bottom: 15rpx;
+  border:1rpx solid #f6f6f6;
+  border-radius: 8rpx;
+  height: 80rpx;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+}
+.num{
+  margin-top: 15rpx;
+}
+.edit_toast{
+  margin-top: 15rpx;
+  font-size: 24rpx;
+  color: #ec722e;
+}
+.bottom_box{
+  border-top: 1rpx solid #f6f6f6;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.but_item{
+  width: 50%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 28rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.line{
+  height: 89rpx;
+  width: 1rpx;
+  background: #f6f6f6;
+}

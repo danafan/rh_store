@@ -25,11 +25,17 @@
   font-weight: 700; 
 }
 .is_default{
+  background-color: #ec722e;
   position: absolute;
   top: 0;
   right: 0;
-  width: 30rpx;
-  height: 30rpx;
+  border-radius: 0 10rpx 0 10rpx;
+  width: 80rpx;
+  text-align: center;
+  height: 36rpx;
+  line-height: 36rpx;
+  font-size: 20rpx;
+  color: #fff;
 }
 .add_bank{
   margin: 0 auto;

@@ -218,19 +218,15 @@
 /* 经营数据 */
 
 .data_content {
-  border-bottom: 1rpx solid #f6f6f6;
-  padding-bottom: 30rpx;
+  margin-top: 30rpx;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
 }
-
-.data_item {
-  margin-top: 30rpx;
-  padding-left: 50rpx;
-  width: 32%;
+.borrder_bottom{
+  border-bottom: 1rpx solid #f6f6f6;
+  padding-bottom: 30rpx;
 }
 
 .data_number {
@@ -283,4 +279,63 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+/* 订单详情 */
+.order_detail_modal{
+  background: rgba(0, 0, 0, .6);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+.modal_content_box{
+  background: #fff;
+  width: 580rpx;
+  border-radius: 10rpx;
+}
+.modal_title{
+  border-bottom: 1rpx solid #f6f6f6;
+  height: 90rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  color: #0b0d1d;
+  font-weight: 700;
+}
+.modal_content{
+  padding: 30rpx 30rpx 0;
+}
+.modal_row{
+  margin-bottom: 20rpx;
+  font-size: 30rpx;
+  color: #0b0d1d;
+}
+.buts{
+  border-top: 1rpx solid #f6f6f6;
+  display: flex;
+}
+.cancel{
+  border-radius: 0 0 0 10rpx;
+  width: 220rpx;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #333;
+}
+.confirm{
+  border-radius: 0 0 10rpx 0;
+  background: #ec722e;
+  flex: 1;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 30rpx;
+  color: #fff;
 }

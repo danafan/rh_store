@@ -5,10 +5,11 @@ Page({
     startBarHeight: app.globalData.startBarHeight,
     navgationHeight: app.globalData.navgationHeight
   },
-  // 立即签约
-  signing() {
-    wx.reLaunch({
-      url: '/pages/registered/registered'
+  // 签约或登录
+  next(e) {
+    let type = e.target.dataset.type;
+    wx.navigateTo({
+      url: '/pages/registered/registered?type=' + type
     })
   }
 })

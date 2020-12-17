@@ -3,14 +3,20 @@ Page({
   data: {
     bill_list: [{
       id: '1',
-      desc: "商户结算",
+      desc: "订单收入",
+      operation:"15990164751",
+      bank_name:"中国银行",
+      bank_code:"3053",
       check_money: "100",
       create_time: '2020-09-20 13:34:56',
       balance: "1034.48",
       type: '1',
     }, {
       id: '2',
-      desc: "提现",
+      desc: "商户提现",
+      operation:"15990164751",
+      bank_name:"中国银行",
+      bank_code:"3053",
       check_money: "98",
       create_time: '2020-09-20 13:34:56',
       balance: "1034.48",

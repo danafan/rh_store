@@ -20,11 +20,15 @@
     <input class="input_box" type="text" value="{{menu_name}}" data-type="menu_name" placeholder="30字以内" bindinput="changeVal"></input>
   </view>
   <view class="item_row">
-    <view class="label">价格</view>
+    <view class="label">单价</view>
     <view class="price_box">
       <text class="price_icon">¥</text>
-      <input class="input_box price_input" type="digit" value="{{menu_price}}" data-type="menu_price" placeholder="菜品价格" bindinput="changeVal"></input>
+      <input class="input_box price_input" type="digit" value="{{menu_price}}" data-type="menu_price" placeholder="菜品单价" bindinput="changeVal"></input>
     </view>
+  </view>
+  <view class="item_row">
+    <view class="label">单位</view>
+    <input class="input_box" type="text" value="{{menu_unit}}" data-type="menu_unit" placeholder="默认【份】" bindinput="changeVal"></input>
   </view>
   <view class="sub_but" bindtap="submit">确认</view>
 </view>

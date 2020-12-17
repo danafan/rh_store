@@ -15,13 +15,13 @@
   </view>
   <!-- 扫码模块 -->
   <view class="index_top" style='margin-top:{{startBarHeight + navgationHeight}}px'>
-    <view class="validation_item" bindtap="inputCode">
-      <image class="validation_icon" src="../../images/keyboard_icon.png"></image>
-      <view class="validation_text">输码核销</view>
-    </view>
     <view class="validation_item" bindtap="scanCode">
       <image class="validation_icon" src="../../images/scan_code.png"></image>
       <view class="validation_text">扫码核销</view>
+    </view>
+    <view class="validation_item" bindtap="inputCode">
+      <image class="validation_icon" src="../../images/keyboard_icon.png"></image>
+      <view class="validation_text">输码核销</view>
     </view>
   </view>
   <!-- 公告 -->
@@ -30,7 +30,7 @@
     <view class="announcement_content">我说你这小子，你是学好难学坏不用教啊我说你这小子，你是学好难学坏不用教啊</view>
     <image class="right_icon" src="../../images/right.png"></image>
   </view>
-  <!-- 下面数据 -->
+  <!-- 经营数据 -->
   <view class="content_box">
     <view class="data_box">
       <!-- 顶部切换时间 -->
@@ -58,11 +58,11 @@
       </view>
       <!-- 经营数据 -->
       <view class="data_title">经营数据</view>
-      <view class="toast">总收益 = 核销金额 * 90%</view>
+      <view class="toast">实际到账 = 核销金额 * 90%</view>
       <!-- 经营数据内容 -->
       <view class="data_content">
         <view class="data_item">
-          <view class="data_label">已入账</view>
+          <view class="data_label">实际到账</view>
           <view class="data_number">805.45</view>
         </view>
         <view class="data_item">
@@ -70,9 +70,11 @@
           <view class="data_number">982.32</view>
         </view>
         <view class="data_item">
-          <view class="data_label">核销单量</view>
+          <view class="data_label">核销数量</view>
           <view class="data_number">12</view>
         </view>
+      </view>
+      <view class="data_content borrder_bottom">
         <view class="data_item">
           <view class="data_label">预计收益</view>
           <view class="data_number">356.88</view>
@@ -88,12 +90,12 @@
       </view>
       <!-- 套餐分析 -->
       <view class="data_title">商品分析</view>
-      <view class="toast">上架套餐按销量从高到低排序</view>
+      <view class="toast">按上架套餐销量从高到低排序</view>
       <view class="package_box">
         <view class="header">
           <view class="name">商品名称</view>
-          <view class="sales">销量</view>
-          <view class="sales">销售额</view>
+          <view class="sales">销量(单)</view>
+          <view class="sales">销售额(元)</view>
         </view>
         <view class="row">
           <view class="name">老坛酸菜鱼+1份米饭套餐1份米饭套餐</view>
@@ -110,4 +112,22 @@
   </view>
   <!-- 输码核销 -->
   <modal bind:onClose="onClose" bind:submitContent="submitContent" title="输码核销" placeholder="请输入核销码" wx:if="{{showModal}}" />
+  <!-- 订单详情弹框 -->
+  <view class="order_detail_modal" wx:if="{{show_order_modal}}">
+    <view class="modal_content_box">
+      <view class="modal_title">订单信息</view>
+      <view class="modal_content">
+        <view class="modal_row">套餐名称：胡晓川双人套餐</view>
+        <view class="modal_row">单价：¥98</view>
+        <view class="modal_row">数量：2</view>
+        <view class="modal_row">合计：¥196</view>
+        <view class="modal_row">下单时间：2020-08-05 13:23:45</view>
+        <view class="modal_row">有效期至：2020-08-20 13:23:45</view>
+      </view>
+      <view class="buts">
+        <view class="cancel" bindtap="cancel">取消</view>
+        <view class="confirm" bindtap="confirm">确认核销</view>
+      </view>
+    </view>
+  </view>
 </view>

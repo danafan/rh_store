@@ -31,7 +31,10 @@
       </picker>
     </view>
     <view class="content_item">
-      <view class="item_label">店铺地址</view>
+      <view class="item_label">
+        <view>店铺地址</view>
+        <view class="toast">*每月允许修改一次</view>
+      </view>
       <view class="item_content" bindtap="chooseLocation">
         <view class="val">{{location_address}}</view>
         <image class="right_icon" src="../../images/right.png"></image>

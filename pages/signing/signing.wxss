@@ -3,7 +3,7 @@ page{
   background: #fff;
 }
 .index_box{
-  margin-top: 118rpx;
+  margin-top: 108rpx;
   background: #fff;
   display: flex;
   flex-direction: column;
@@ -14,16 +14,8 @@ page{
   width: 494rpx;
   height: 342rpx;
 }
-.index_toast{
-  margin-top: 44rpx;
-  margin-bottom: 44rpx;
-  color: #333333;
-  font-size: 36rpx;
-}
+
 .about_box{
-  padding-bottom: 30rpx;
-  margin-top: 28rpx;
-  background: #fff;
   padding-left: 48rpx;
   padding-right: 48rpx;
 }
@@ -33,15 +25,15 @@ page{
   line-height: 84rpx;
   color: #333333;
   font-size: 32rpx;
-  font-weight:600;
+  font-weight:700;
 }
 .toast_text{
   margin-top: 20rpx;
-  font-size: 24rpx;
+  font-size: 26rpx;
   color: #8a8a8a;
 }
 .cash_but {
-  margin: 20rpx auto;
+  margin: 30rpx auto 0;
   border-radius: 45rpx;
   background-image: linear-gradient(to left, #e84d2a, #ec722e);
   width: 80%;
@@ -50,4 +42,15 @@ page{
   line-height: 90rpx;
   font-size: 32rpx;
   color: #fff;
+}
+.store_login{
+  margin: 15rpx auto;
+  border:1rpx solid #ec722e;
+  border-radius: 45rpx;
+  width: 80%;
+  text-align: center;
+  height: 90rpx;
+  line-height: 90rpx;
+  font-size: 32rpx;
+  color: #ec722e;
 }

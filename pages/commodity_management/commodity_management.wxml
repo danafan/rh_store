@@ -10,22 +10,15 @@
     </view>
     <view class="tab_item" data-index="1" bindtap="checkTab">
       <view class="tab_label {{tab_index == '1'?'active_tab_label':''}}">
-        <text>待下架</text>
+        <text>已下架</text>
         <text class="num">(0)</text>
       </view>
       <view class="active_tab" wx:if="{{tab_index == '1'}}"></view>
     </view>
-    <view class="tab_item" data-index="2" bindtap="checkTab">
-      <view class="tab_label {{tab_index == '2'?'active_tab_label':''}}">
-        <text>待上架</text>
-        <text class="num">(0)</text>
-      </view>
-      <view class="active_tab" wx:if="{{tab_index == '2'}}"></view>
-    </view>
   </view>
   <!-- 列表 -->
   <view class="commodity_list">
-    <view class="bus_item" wx:for="{{commodity_list}}" wx:key="id" data-sub_type="edit" data-id="1" bindtap="editCommodity">
+    <view class="bus_item" wx:for="{{commodity_list}}" wx:key="id" data-sub_type="edit" data-id="1" bindtap="commodityDetail">
       <view class="item_content">
         <image class="package_img" mode="aspectFill" src="{{item.commodity_img}}"></image>
         <view class="bus_content">
@@ -46,15 +39,13 @@
               <view class="tag">{{item.discount}}折</view>
             </view>
             <view class="shelves" data-status="1" catchtap="shelvesFun" wx:if="{{item.status == '1'}}">下架</view>
-            <view class="shelves" data-status="2" catchtap="shelvesFun" wx:if="{{item.status == '2'}}">撤销</view>
             <view class="up_shelves" data-status="3" catchtap="shelvesFun" wx:if="{{item.status == '3'}}">上架</view>
           </view>
         </view>
       </view>
-      <view class="item_toast" wx:if="{{item.status == '2'}}">商品将于2020-09-28 14:42:58 下架</view>
     </view>
   </view>
-  <view class="add_but" data-sub_type="add" catchtap="editCommodity">
+  <view class="add_but" data-sub_type="add" catchtap="addCommodity">
     <image class="add_icon" src="../../images/add_icon.png"></image>
     <view>新建套餐</view>
   </view>

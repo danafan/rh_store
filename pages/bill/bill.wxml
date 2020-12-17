@@ -10,7 +10,7 @@
     <view class="money_info">
       <view class="info_item">
         <text class="bottom_row">收入</text>
-        <text class="check_money"> +1580.42 </text>
+        <text class="check_money add_check_money"> +1580.42 </text>
         <text class="bottom_row">2笔</text>
       </view>
       <view class="info_item">
@@ -25,8 +25,11 @@
       <view class="bill_desc">{{item.desc}}</view>
       <view class="check_money {{item.type == '1'?'add_check_money':''}}">{{item.type == '1'?'+':'-'}}{{item.check_money}}</view>
     </view>
+    <view class="bill_row bottom_row" wx:if="{{item.type == '2'}}">
+      <view>到账银行：{{item.bank_name}}（{{item.bank_code}}）</view>
+    </view>
     <view class="bill_row bottom_row">
-      <view>{{item.create_time}}</view>
+      <view>操作时间：{{item.create_time}}</view>
       <view>余额：{{item.balance}}</view>
     </view>
   </view>

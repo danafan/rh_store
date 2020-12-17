@@ -1,0 +1,50 @@
+<!--pages/commodity_detail.wxml-->
+<view>
+  <view class="item_row">
+    <view class="label">名称</view>
+    <view class="input_box">{{package_info.package_name}}</view>
+  </view>
+  <view class="item_row">
+    <view class="label">图片</view>
+    <view class="img_list">
+      <view class="commodity_img_box" wx:for="{{package_info.image_list}}" wx:key="index"  data-index="{{index}}" bindtap="handleClick">
+        <image class="commodity_img" mode="aspectFill" src="{{item}}"></image>
+        <view class="tag" wx:if="{{index == 0}}">封面</view>
+      </view>
+    </view>
+  </view>
+  <view class="item_row">
+    <view class="label">内容</view>
+    <view class="package_content">
+      <view class="cate_item {{index >= 1?'margin_top':''}}" wx:for="{{package_info.package_cate_list}}" wx:key="index"
+        wx:for-index="index">
+        <view class="cate_name">{{item.cate_name}}</view>
+        <view class="menu_item" wx:for="{{item.menu_list}}" wx:key="i" wx:for-item="menu_item" wx:for-index="i">
+          <view class="item_left">
+            <view class="close_icon"></view>
+            <view class="menu_name">{{menu_item.menu_name}}</view>
+          </view>
+          <view class="item_right">
+            <view>¥{{menu_item.price}}</view>
+            <view class="number_input">x{{menu_item.num}} {{menu_item.unit}}</view>
+          </view>
+        </view>
+      </view>
+      <!-- 计算 -->
+      <view class="total_price margin_top">
+        <view class="total_box">合计：</view>
+        <view class="current_price_box">
+          <text class="select_price_icon">¥</text>
+          <text class="current_price">{{package_info.total_price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="item_row">
+    <view class="label">价格</view>
+    <view class="price_box">
+      <text class="price_icon">¥</text>
+      <view class="input_box price_input">{{package_info.price}}</view>
+    </view>
+  </view>
+</view>

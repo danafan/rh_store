@@ -4,6 +4,7 @@
   border-bottom: 1rpx solid #f6f6f6;
   padding: 30rpx 15rpx;
   display: flex;
+  align-items: center;
 }
 .between{
   align-items: center;
@@ -20,7 +21,23 @@
 .input_box{
   flex: 1;
 }
-
+.code_box{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.code_text {
+  width: 200rpx;
+  /* height: 92rpx; */
+  font-size: 26rpx;
+  color: #ec722e;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.code_text_active {
+  color: #666;
+}
 .button {
   margin: 50rpx auto;
   border-radius: 45rpx;

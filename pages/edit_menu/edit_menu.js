@@ -5,6 +5,7 @@ Page({
     menu_img: '', //上传的图片
     menu_name: "", //菜品名称
     menu_price: "", //菜品价格
+    menu_unit:"",   //单位（默认份）
     startTime: 0,
     endTime: 0
   },

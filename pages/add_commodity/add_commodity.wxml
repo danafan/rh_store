@@ -1,0 +1,101 @@
+<!--pages/edit_commodity/edit_commodity.wxml-->
+<view>
+  <view class="commodity_content">
+    <view class="item_row">
+      <view class="label">名称</view>
+      <input class="input_box" type="text" value="{{package_name}}" data-type="package_name" placeholder="套餐名称，30字以内..."
+        bindinput="changeVal"></input>
+    </view>
+    <view class="item_row">
+      <view class="label">图片</view>
+      <view class="img_box">
+        <view class="img_list">
+          <!-- 已上传的图片 -->
+          <view class="commodity_img_box" wx:for="{{img_list}}" wx:key="index" data-index="{{index}}"
+            bindtouchstart="handleTouchStart" bindtouchend="handleTouchEnd" bindlongpress="handleLongPress"
+            bindtap="handleClick">
+            <image class="commodity_img" mode="aspectFill" src="{{item}}"></image>
+            <view class="tag" wx:if="{{index == 0}}">封面</view>
+          </view>
+          <!-- 选择图片 -->
+          <view class="upload_box" bindtap="chooseImg" wx:if="{{img_list.length < 5}}">
+            <image class="upload_icon" src="../../images/camera.png"></image>
+            <view class="upload_text">套餐图片</view>
+          </view>
+        </view>
+        <view class="size_toast">*最多5张，建议图片比例 1:1.3</view>
+        <view class="size_toast">默认第一张为封面图，长按可切换或删除</view>
+      </view>
+    </view>
+    <view class="item_row">
+      <view class="label">内容</view>
+      <view class="content_box">
+        <view class="content_row">
+          <view class="add_cate" bindtap="addPackItem">
+            <image class="add_icon" src="../../images/add_icon.png"></image>
+            <view class="edit_but">添加分类</view>
+          </view>
+        </view>
+        <view class="package_content margin_top" wx:if="{{package_list.length > 0}}">
+          <view class="cate_item {{index >= 1?'margin_top':''}}" wx:for="{{package_list}}" wx:key="index"
+            wx:for-index="index">
+            <view class="item_top">
+              <view class="cate_name" wx:if="{{item.cate_name != ''}}" data-index="{{index}}"
+                data-cate_name="{{item.cate_name}}" data-is_checked="{{item.is_checked}}"
+                data-check_num="{{item.check_num}}" bindtap="editCateName">{{item.cate_name}}</view>
+              <view class="cate_name_input" wx:else data-index="{{index}}" data-cate_name="{{item.cate_name}}"
+                data-is_checked="{{item.is_checked}}" data-check_num="{{item.check_num}}" bindtap="editCateName">分类名称 如
+                主食</view>
+              <image class="delete_cate" src="../../images/delete_cate.png" data-index="{{index}}" bindtap="deleteCate">
+              </image>
+            </view>
+            <view class="menu_item" wx:for="{{item.menu_list}}" wx:key="i" wx:for-item="menu_item" wx:for-index="i">
+              <view class="item_left">
+                <view class="close_icon"></view>
+                <view class="menu_name">{{menu_item.name}}</view>
+              </view>
+              <view class="item_right">
+                <view>¥{{menu_item.price}}</view>
+                <view class="number_box">
+                  <image class="icon" src="../../images/jian_icon.png" data-index="{{index}}" data-i="{{i}}"
+                    data-type="jian" bindtap="changeNumber"></image>
+                  <view class="number_input">{{menu_item.number}} 份</view>
+                  <image class="icon" src="../../images/add_num.png" data-index="{{index}}" data-i="{{i}}"
+                    data-type="jia" bindtap="changeNumber"></image>
+                </view>
+              </view>
+            </view>
+            <picker mode="multiSelector" data-index="{{index}}" bindchange="bindMultiPickerChange"
+              bindcolumnchange="bindMultiPickerColumnChange" value="{{multiIndex}}" range="{{multiArray}}">
+              <view class="add_menu">+添加菜品</view>
+            </picker>
+          </view>
+          <!-- 计算 -->
+          <view class="total_price">
+            <view class="total_box">合计：</view>
+            <view class="current_price_box">
+              <text class="select_price_icon">¥</text>
+              <text class="current_price">{{total_price}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="item_row">
+      <view class="label">价格</view>
+      <view class="price_box">
+        <text class="price_icon">¥</text>
+        <input class="input_box price_input" type="digit" value="{{new_price}}" data-type="new_price"
+          placeholder="输入用户购买价格" bindinput="changeVal"></input>
+      </view>
+    </view>
+    <view class="item_row between">
+      <view class="label card_label">审核通过后直接上架</view>
+      <switch checked="{{is_default}}" color="#ec722e" data-type="is_default" bindchange="changeVal" />
+    </view>
+  </view>
+  <view class="sub_but" bindtap="submitAudit">提交审核</view>
+  <!-- 添加分类名称 -->
+  <package_cate_modal bind:onClose="onClose" bind:submitContent="submitContent" edit_value="{{edit_value}}"
+    is_checked="{{is_checked}}" check_num="{{check_num}}" wx:if="{{showModal}}" />
+</view>

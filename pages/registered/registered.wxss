@@ -12,7 +12,7 @@ page {
 .login_title {
   margin-top: 118rpx;
   margin-bottom: 84rpx;
-  font-weight: 500;
+  font-weight: 700;
   font-size: 44rpx;
   color: #0b0d1d;
 }
@@ -56,12 +56,6 @@ page {
 
 .code_text_active {
   color: #666;
-}
-
-.toast {
-  margin-top: 8rpx;
-  font-size: 26rpx;
-  color: #8a8a8a;
 }
 
 .login {

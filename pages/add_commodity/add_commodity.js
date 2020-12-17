@@ -1,8 +1,6 @@
 // pages/edit_commodity/edit_commodity.js
 Page({
   data: {
-    sub_type: '1', //1:添加；2:修改
-    commodity_id: "", //编辑的商品的id
     package_name: "", //商品名称
     img_list: [], //已上传的图片列表
     startTime: 0, //点击时间
@@ -19,19 +17,15 @@ Page({
     default_cate_id: "",
     multiIndex: [0, 0],
     package_list: [], //已选套餐列表
-    showModal: false, //添加分类名称弹框
+    showModal: false, //添加或编辑分类弹框
     current_cate_index: 0, //点击的分类下标
-    edit_value: "", //弹框内容
+    modal_type: '1', //1:添加分类；2:编辑分类
+    edit_value: "", //分类名称
+    is_checked: false, //是否多选
+    check_num: "", //可选数量
     total_price: 0, //合计金额
   },
-  onLoad(options) {
-    wx.setNavigationBarTitle({
-      title: options.sub_type == 'add' ? '添加套餐' : '编辑套餐',
-    })
-    this.setData({
-      sub_type: options.sub_type == 'add' ? '1' : '2',
-      commodity_id: options.sub_type == 'add' ? '' : options.id
-    })
+  onLoad() {
     //获取类别列表
     this.getCateList();
   },
@@ -130,18 +124,79 @@ Page({
       }
     })
   },
-  //增加分类
+  //点击增加分类
   addPackItem() {
-    let pack_item = {
-      cate_name: "",
-      menu_list: []
-    }
-    let arr = this.data.package_list;
-    arr.push(pack_item)
     this.setData({
-      package_list: arr
+      modal_type: '1',
+      edit_value: "",
+      is_checked: false,
+      check_num: "",
+      showModal: true
     })
-    console.log(this.data.package_list)
+  },
+  //点击编辑分类
+  editCateName(e) {
+    let index = e.currentTarget.dataset.index;
+    let cate_name = e.currentTarget.dataset.cate_name;
+    let is_checked = e.currentTarget.dataset.is_checked;
+    let check_num = e.currentTarget.dataset.check_num;
+    this.setData({
+      modal_type: '2',
+      current_cate_index: index,
+      edit_value: cate_name,
+      is_checked: is_checked,
+      check_num: check_num,
+      showModal: true
+    })
+  },
+  //添加或编辑分类名称确认
+  submitContent(e) {
+    let cate_name = e.detail.edit_value;
+    let is_checked = e.detail.is_checked;
+    let check_num = e.detail.check_num;
+    if (cate_name == '') {
+      wx.showToast({
+        title: '请输入套餐名称',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      })
+    } else if (is_checked == true && check_num == '') {
+      wx.showToast({
+        title: '请输入可选数量',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      })
+    } else {
+      if (this.data.modal_type == '1') { //添加分类
+        let pack_item = {
+          cate_name: cate_name,
+          is_checked: is_checked,
+          check_num: check_num,
+          menu_list: []
+        }
+        let arr = this.data.package_list;
+        arr.push(pack_item)
+        this.setData({
+          package_list: arr,
+          showModal: false
+        })
+      } else { //编辑分类
+        let current_cate_index = this.data.current_cate_index;
+        var set_cate_name = `package_list[${current_cate_index}].cate_name`;
+        var set_is_checked = `package_list[${current_cate_index}].is_checked`;
+        var set_check_num = `package_list[${current_cate_index}].check_num`;
+        this.setData({
+          [set_cate_name]: cate_name,
+          [set_is_checked]: is_checked,
+          [set_check_num]: check_num,
+          showModal: false
+        })
+        //计算合计金额
+        this.calculateTotal();
+      }
+    }
   },
   //删除分类
   deleteCate(e) {
@@ -164,17 +219,17 @@ Page({
   },
   //监听菜品的数量
   changeNumber(e) {
-    let index = e.currentTarget.dataset.index;
-    let i = e.currentTarget.dataset.i;
-    let type = e.currentTarget.dataset.type;
-    let current_number = this.data.package_list[index].menu_list[i].number;
-    if (type == 'jia') {
+    let index = e.currentTarget.dataset.index; //分类下标
+    let i = e.currentTarget.dataset.i; //菜品在分类的下标
+    let type = e.currentTarget.dataset.type; //jia：加；jian：减
+    var current_number = this.data.package_list[index].menu_list[i].number; //操作的菜品的当前数量
+    if (type == 'jia') { //加
       current_number += 1;
       var number = `package_list[${index}].menu_list[${i}].number`;
       this.setData({
         [number]: current_number
       })
-    } else {
+    } else { //减
       if (current_number == 1) {
         let new_list = this.data.package_list[index].menu_list;
         new_list.splice(i, 1);
@@ -329,29 +384,9 @@ Page({
       menu_name_list: menu_name_list
     })
   },
-  //点击某一类别的标题
-  editCateName(e) {
-    let index = e.currentTarget.dataset.index;
-    let cate_name = e.currentTarget.dataset.cate_name;
-    this.setData({
-      current_cate_index: index,
-      edit_value: cate_name == '' ? '' : cate_name,
-      showModal: true
-    })
-  },
-  //关闭添加分类名称
+  //关闭添加分类弹框
   onClose() {
     this.setData({
-      showModal: false
-    })
-  },
-  //添加分类名称
-  submitContent(e) {
-    let edit_value = e.detail.edit_value;
-    let current_cate_index = this.data.current_cate_index;
-    var cate_name = `package_list[${current_cate_index}].cate_name`;
-    this.setData({
-      [cate_name]: edit_value,
       showModal: false
     })
   },
@@ -403,15 +438,38 @@ Page({
   calculateTotal() {
     let menu_list = [];
     this.data.package_list.map(item => {
-      menu_list = [...menu_list, ...item.menu_list];
+      if (item.is_checked == true) {
+        item.menu_list.map(i => {
+          i.total_price = parseFloat(i.price) * i.number;
+        })
+        var arr = item.menu_list.sort(this.compare("total_price", false));
+        menu_list = [...menu_list, ...arr.slice(0, parseInt(item.check_num))];
+      } else {
+        menu_list = [...menu_list, ...item.menu_list];
+      }
     })
     let total_price = 0;
     menu_list.map(item => {
       total_price += parseFloat(item.price) * item.number
     })
     this.setData({
-      total_price: total_price
+      total_price: total_price,
+      package_list: this.data.package_list
     })
+  },
+  // 排序
+  compare(property, desc) {
+    return function (a, b) {
+      var value1 = a[property];
+      var value2 = b[property];
+      if (desc == true) {
+        // 升序排列
+        return value1 - value2;
+      } else {
+        // 降序排列
+        return value2 - value1;
+      }
+    }
   },
   //提交审核
   submitAudit() {

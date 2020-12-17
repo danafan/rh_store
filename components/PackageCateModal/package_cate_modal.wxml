@@ -1,0 +1,18 @@
+<!--components/PackageCateModal/package_cate_nodal.wxml-->
+<view class="modal_box">
+  <view class="edit_box">
+    <view class="title">添加分类</view>
+    <view class="edit_content">
+      <input class="edit_input" type="text" value="{{edit_value}}" data-value_type="edit_value" placeholder="分类名称 如 主食" bindinput="changeValue" focus></input>
+      <switch color="#ec722e" type="checkbox" checked="{{is_checked}}" data-value_type="is_checked" bindchange="changeValue"/>是否选择部分商品
+      <view class="edit_toast">*如勾选则该分类下菜品将变为多选多的形式，如3选1、5选2等</view>
+      <input class="edit_input num" type="number" value="{{check_num}}" data-value_type="check_num" placeholder="可选数量" bindinput="changeValue" wx:if="{{is_checked}}"></input>
+      <view class="edit_toast" wx:if="{{is_checked}}">*可选数量为该分类下菜品数量中可选的数量，如3选1中的‘1’</view>
+    </view>
+    <view class="bottom_box">
+      <view class="but_item" bindtap="closeModal">取消</view>
+      <view class="line"></view>
+      <view class="but_item" bindtap="submitContent">确认</view>
+    </view>
+  </view>
+</view>
