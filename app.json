@@ -1,15 +1,15 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/store_info/store_info",
+    "pages/add_commodity/add_commodity",
     "pages/my/my",
     "pages/add_bank/add_bank",
     "pages/registered/registered",
     "pages/commodity_management/commodity_management",
     "pages/commodity_detail/commodity_detail",
     "pages/menu_management/menu_management",
-    "pages/add_commodity/add_commodity",
     "pages/signing/signing",
-    "pages/store_info/store_info",
     "pages/qualification_info/qualification_info",
     "pages/store_setting/store_setting",
     "pages/qualification/qualification",

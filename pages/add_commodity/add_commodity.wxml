@@ -40,12 +40,9 @@
           <view class="cate_item {{index >= 1?'margin_top':''}}" wx:for="{{package_list}}" wx:key="index"
             wx:for-index="index">
             <view class="item_top">
-              <view class="cate_name" wx:if="{{item.cate_name != ''}}" data-index="{{index}}"
-                data-cate_name="{{item.cate_name}}" data-is_checked="{{item.is_checked}}"
-                data-check_num="{{item.check_num}}" bindtap="editCateName">{{item.cate_name}}</view>
-              <view class="cate_name_input" wx:else data-index="{{index}}" data-cate_name="{{item.cate_name}}"
-                data-is_checked="{{item.is_checked}}" data-check_num="{{item.check_num}}" bindtap="editCateName">分类名称 如
-                主食</view>
+              <view class="cate_name" data-index="{{index}}" data-cate_name="{{item.cate_name}}"
+                data-is_checked="{{item.is_checked}}" data-check_num="{{item.check_num}}" bindtap="editCateName">
+                {{item.cate_name}}<text wx:if="{{item.is_checked}}">（{{item.menu_list.length}}选{{item.check_num}}）</text></view>
               <image class="delete_cate" src="../../images/delete_cate.png" data-index="{{index}}" bindtap="deleteCate">
               </image>
             </view>

@@ -60,5 +60,32 @@ Page({
   //分享自定义
   onShareAppMessage: function (res) {
     return app.globalData.shareObj
+  },
+  // 退出
+  loginOut(){
+    wx.showModal({
+      title: '提示',
+      content: '确认退出？',
+      success:(res) => {
+        if (res.confirm) {
+          wx.showToast({
+            title: '已退出',
+            icon: 'none',
+            duration: 1500,
+            mask: true
+          })
+          wx.reLaunch({
+            url: '/pages/signing/signing',
+          });
+        }else{
+          wx.showToast({
+            title: '取消退出',
+            icon: 'none',
+            duration: 1500,
+            mask: true
+          })
+        }
+      }
+    })
   }
 })

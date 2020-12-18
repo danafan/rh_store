@@ -11,10 +11,11 @@ Page({
     notBut: true, //默认获取验证码可点击
     time: 60, //倒计时时间
     codebutTxt: "获取验证码", //获取验证码文字
-    startBarHeight: app.globalData.startBarHeight,
-    navgationHeight: app.globalData.navgationHeight
   },
   onLoad(e){
+    wx.setNavigationBarTitle({
+      title: e.type == 'sign' ? '新商户签约' : '商户登录'
+    })
     this.setData({
       page_type:e.type,
       navgation_title:e.type == 'sign' ? '新商户签约' : '商户登录',

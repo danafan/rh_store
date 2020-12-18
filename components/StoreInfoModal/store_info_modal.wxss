@@ -1,4 +1,4 @@
-/* components/PackageCateModal/package_cate_nodal.wxss */
+/* components/StoreInfoModal/store_info_modal.wxss */
 .modal_box{
   background: rgba(0, 0, 0, .6);
   position: fixed;
@@ -29,19 +29,24 @@
 .edit_content{
   padding: 30rpx;
 }
-.edit_input{
-  margin-bottom: 15rpx;
-  border:1rpx solid #f6f6f6;
-  border-radius: 8rpx;
-  height: 80rpx;
-  padding-left: 10rpx;
-  padding-right: 10rpx;
+.cate_box{
+  display: flex;
+  flex-wrap: wrap;
 }
-.num{
-  margin-top: 15rpx;
+.category_item{
+  border-radius: 5rpx;
+  border:1rpx solid #666161;
+  padding: 8rpx 12rpx;
+  font-size: 28rpx;
+  color:#666161;
+  margin-right: 18rpx;
+  margin-bottom: 18rpx;
 }
-.edit_toast{
-  margin-top: 15rpx;
+.active_item{
+  border:1rpx solid #ec722e;
+  color: #ec722e;
+}
+.toast{
   font-size: 24rpx;
   color: #ec722e;
 }

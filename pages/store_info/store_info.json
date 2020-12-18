@@ -1,6 +1,7 @@
 {
   "navigationStyle": "custom",
   "usingComponents": {
+    "store_info_modal": "../../components/StoreInfoModal/store_info_modal",
     "navgation": "/components/Navgation/navgation",
     "upload_file": "/components/UploadFile/upload_file"
   }

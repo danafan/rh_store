@@ -4,7 +4,8 @@ const locationApi = require('../../utils/getLocation.js')
 Page({
   data: {
     store_name: "", //店铺名称
-    cate_id: "", //品类id
+    showModal:false,    //选择品类弹框
+    cate_id: "", //品类id集合
     cate_name: "", //品类名称
     store_address:"", //店铺地址
     contact_name: "", //联系人姓名
@@ -19,6 +20,21 @@ Page({
     }, {
       id: '3',
       name: '海鲜'
+    }, {
+      id: '4',
+      name: '自助餐'
+    }, {
+      id: '5',
+      name: '川湘菜'
+    }, {
+      id: '6',
+      name: '日韩料理'
+    }, {
+      id: '7',
+      name: '蛋糕甜点'
+    }, {
+      id: '8',
+      name: '快餐西餐'
     }], //经营品类列表
     start_time: '', //开张时间
     end_time: '', //打烊时间
@@ -53,14 +69,35 @@ Page({
       [type]: ""
     })
   },
-  //切换经营品类
-  changeCate(e) {
-    let index = e.detail.value;
-    console.log(index)
+  //切换经营品类弹框
+  changeModal() {
     this.setData({
-      cate_name: this.data.category_list[index].name,
-      cate_id: this.data.category_list[index].id
+      showModal: !this.data.showModal
     })
+  },
+  //确认经营品类
+  submitContent(e) {
+    let active_arr = e.detail.active_cate_ids;
+    if(active_arr.length == 0){
+      wx.showToast({
+        title: '请选择经营品类',
+        icon: 'none',
+        duration: 1500,
+        mask: true
+      })
+    }else{
+      let names = [];
+      let ids = [];
+      active_arr.map(item => {
+        names.push(item.name);
+        ids.push(item.id);
+      })
+      this.setData({
+        cate_id:ids.join('_'),
+        cate_name:names.join('、'),
+        showModal:false
+      })
+    }
   },
   //切换时间
   changeTime(e) {

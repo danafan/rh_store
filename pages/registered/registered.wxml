@@ -1,7 +1,7 @@
 <!--pages/registered/registered.wxml-->
-<view style="padding-top:{{startBarHeight + navgationHeight}}px">
+<view>
 <!-- 顶部标题栏 -->
-  <navgation title="{{navgation_title}}"/>
+  <!-- <navgation title="{{navgation_title}}"/> -->
   <view class="login_container">
   <view class="login_title">{{navgation_title}}</view>
   <input class="input" value="{{phone}}" type="number" bindinput="changePhone" placeholder-style="color:#B9C0D4" placeholder="请输入手机号码" />

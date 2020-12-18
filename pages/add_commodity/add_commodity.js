@@ -196,6 +196,7 @@ Page({
         //计算合计金额
         this.calculateTotal();
       }
+      console.log(this.data.package_list);
     }
   },
   //删除分类
@@ -431,6 +432,7 @@ Page({
     this.setData({
       [menu_list]: cate_menu_list
     })
+    console.log(this.data.package_list);
     //计算合计金额
     this.calculateTotal();
   },

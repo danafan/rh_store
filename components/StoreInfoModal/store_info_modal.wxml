@@ -1,0 +1,18 @@
+<!--components/StoreInfoModal/store_info_modal.wxml-->
+<view class="modal_box">
+  <view class="edit_box">
+    <view class="title">经营品类</view>
+    <view class="edit_content">
+      <view class="cate_box">
+        <view class="category_item {{item.is_default?'active_item':''}}" wx:for="{{category_list}}" wx:key="id" data-cate_id="{{item.id}}" bindtap="checkItem">{{item.name}}</view>
+      </view>
+      <view class="toast">*最多选择3个经营品类</view>
+    </view>
+    <view class="bottom_box">
+      <view class="but_item" bindtap="closeModal">取消</view>
+      <view class="line"></view>
+      <view class="but_item confirm" bindtap="submitContent">确认</view>
+    </view>
+  </view>
+</view>
+

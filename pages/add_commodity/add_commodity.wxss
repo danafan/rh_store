@@ -173,9 +173,7 @@
   color: #0b0d1d;
   font-weight: 700;
 }
-.cate_name_input{
-  color: #8a8a8a;
-}
+
 .delete_cate{
   width: 40rpx;
   height: 40rpx;

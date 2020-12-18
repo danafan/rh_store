@@ -8,13 +8,11 @@
   </view>
   <view class="input_item">
     <view class="label">经营品类</view>
-    <picker style="flex:1" range-key="name" bindchange="changeCate" range="{{category_list}}">
-      <view class="cate_box">
+    <view class="cate_box" bindtap="changeModal">
         <view class="cate_text" wx:if="{{cate_id == ''}}">请选择经营品类</view>
         <view class="cate_text_active" wx:else>{{cate_name}}</view>
         <image class="right_icon" src="../../images/right.png"></image>
       </view>
-    </picker>
   </view>
   <view class="input_item">
     <view class="label">店铺地址</view>
@@ -56,4 +54,5 @@
     <input class="input" type="text" value="{{contact_phone}}" data-type="contact_phone" bindinput="changeValue" placeholder="联系人电话" />
   </view>
   <view class="submit" bindtap="submit">提交</view>
+  <store_info_modal bind:changeModal="changeModal" bind:submitContent="submitContent" category_list="{{category_list}}" wx:if="{{showModal}}" />
 </view>
