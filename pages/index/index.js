@@ -26,6 +26,10 @@ Page({
     end_time: "", //可传递的结束时间
     showModal:false,  //默认输码核销弹框不显示
     show_order_modal:false,   //订单核销详情
+    order_info:{
+      package_num:3
+    },
+    verify_num:1,       //默认核销数量
   },
   onLoad: function(options) {
     //自定义时间区间的开始结束范围
@@ -52,6 +56,35 @@ Page({
       showModal: false
     })
   },
+  //切换核销数量
+  changeNumber(e){
+    let type = e.target.dataset.type;
+    if(type == 'jia'){
+      if(this.data.verify_num == this.data.order_info.package_num){
+        wx.showToast({
+          title: '核销数量不能超过购买总数量',
+          icon: 'none',
+          duration: 1500
+        })
+      }else{
+        this.setData({
+          verify_num:this.data.verify_num + 1
+        })
+      }
+    }else{
+      if(this.data.verify_num == 1){
+        wx.showToast({
+          title: '核销数量不能少于1',
+          icon: 'none',
+          duration: 1500
+        })
+      }else{
+        this.setData({
+          verify_num:this.data.verify_num - 1
+        })
+      }
+    }
+  },
   //输码核销确认
   submitContent(e) {
     let edit_value = e.detail.edit_value;
@@ -62,18 +95,21 @@ Page({
   },
   //扫码核销
   scanCode(){
-    wx.scanCode({
-      onlyFromCamera: true,
-      success:(res) => {
-        this.setData({
-          show_order_modal:true
-        })
-        // wx.showModal({
-        //   title: '提示',
-        //   content: res.result
-        // })
-      }
+    this.setData({
+      show_order_modal: true
     })
+    // wx.scanCode({
+    //   onlyFromCamera: true,
+    //   success:(res) => {
+    //     this.setData({
+    //       show_order_modal:true
+    //     })
+    //     // wx.showModal({
+    //     //   title: '提示',
+    //     //   content: res.result
+    //     // })
+    //   }
+    // })
   },
   //取消核销
   cancel(){

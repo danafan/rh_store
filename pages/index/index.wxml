@@ -37,18 +37,21 @@
       <view class="check_date_box">
         <!-- 选择时间范围 -->
         <view class="date_type_box">
-          <view class="date_item {{item.id == active_type_id?'active_date_item':''}}" wx:for="{{date_type_list}}" wx:key="id" data-id="{{item.id}}" bindtap="checkType">{{item.name}}</view>
+          <view class="date_item {{item.id == active_type_id?'active_date_item':''}}" wx:for="{{date_type_list}}"
+            wx:key="id" data-id="{{item.id}}" bindtap="checkType">{{item.name}}</view>
         </view>
         <!-- 自定义时间框 -->
         <view class="check_picker" wx:if="{{active_type_id == '4'}}">
-          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="start" bindchange="bindDateChange">
+          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="start"
+            bindchange="bindDateChange">
             <view class="time_box">
               <view class="time_val">{{start_time}}</view>
               <image class="down_icon" src="../../images/right.png"></image>
             </view>
           </picker>
           <view class="to_box">至</view>
-          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="end" bindchange="bindDateChange">
+          <picker mode="date" start="{{start_date}}" end="{{end_date}}" data-date_type="end"
+            bindchange="bindDateChange">
             <view class="time_box">
               <view class="time_val">{{end_time}}</view>
               <image class="down_icon" src="../../images/right.png"></image>
@@ -111,7 +114,8 @@
     </view>
   </view>
   <!-- 输码核销 -->
-  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="输码核销" placeholder="请输入核销码" wx:if="{{showModal}}" />
+  <modal bind:onClose="onClose" bind:submitContent="submitContent" title="输码核销" placeholder="请输入核销码"
+    wx:if="{{showModal}}" />
   <!-- 订单详情弹框 -->
   <view class="order_detail_modal" wx:if="{{show_order_modal}}">
     <view class="modal_content_box">
@@ -119,7 +123,17 @@
       <view class="modal_content">
         <view class="modal_row">套餐名称：胡晓川双人套餐</view>
         <view class="modal_row">单价：¥98</view>
-        <view class="modal_row">数量：2</view>
+        <view class="modal_row">数量：{{order_info.package_num}}</view>
+        <view class="modal_row">
+          <view>本次核销数量：</view>
+          <view class="number_box">
+            <image class="icon" src="../../images/jian_icon.png" data-type="jian"
+              bindtap="changeNumber"></image>
+            <view class="number_input">{{verify_num}}</view>
+            <image class="icon" src="../../images/add_num.png" data-type="jia"
+              bindtap="changeNumber"></image>
+          </view>
+        </view>
         <view class="modal_row">合计：¥196</view>
         <view class="modal_row">下单时间：2020-08-05 13:23:45</view>
         <view class="modal_row">有效期至：2020-08-20 13:23:45</view>

@@ -25,6 +25,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  position: relative;
 }
 
 .content_top {
@@ -52,6 +53,19 @@
 .hot_icon {
   width: 30rpx;
   height: 30rpx;
+}
+.is_good{
+  position: absolute;
+  top:0;
+  right: 0;
+  border: 5rpx solid #ff5858;
+  border-radius: 5rpx;
+  font-size: 36rpx;
+  font-weight: 600;
+  color: #ff5858;
+  padding-left: 10rpx;
+  padding-right: 10rpx;
+  transform: rotate(-25deg);
 }
 
 .comment_info {

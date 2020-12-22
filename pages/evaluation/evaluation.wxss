@@ -8,6 +8,7 @@
   height: 150rpx;
   width: 100%;
   padding: 15rpx;
+  z-index: 1;
 }
 
 .comment_info {

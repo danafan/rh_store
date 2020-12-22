@@ -120,6 +120,9 @@
   font-size: 26rpx;
   color: #8a8a8a;
 }
+.orange{
+  color: #ec722e;
+}
 .green{
   color: green;
 }

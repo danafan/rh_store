@@ -43,6 +43,16 @@ Page({
       discount: '7.8',
       shelves_time: '2020-09-28 14:42:35',
       status: '4', //1:已上架；2:已下架；3:待上架；4：未通过
+    },{
+      id: '5',
+      commodity_img: '../../images/banner_02.jpg',
+      commodity_name: '大众精选杭帮菜2人特惠套餐',
+      sold_num: '32',
+      now_project: '108',
+      old_project: '198',
+      discount: '7.8',
+      shelves_time: '2020-09-28 14:42:35',
+      status: '5', //1:已上架；2:已下架；3:待上架；4：未通过；5:待审核
     }]
   },
   //切换顶部导航
@@ -60,6 +70,19 @@ Page({
       success:(res) => {
         if (res.confirm) {
           console.log("已下架")
+        }
+      }
+    })
+  },
+  //撤销
+  undoFun(e){
+    var id = e.currentTarget.dataset.id;
+    wx.showModal({
+      title: '提示',
+      content: '撤销后系统将不再继续审核，并删除该套餐，确认撤销？',
+      success:(res) => {
+        if (res.confirm) {
+          console.log("已撤销")
         }
       }
     })

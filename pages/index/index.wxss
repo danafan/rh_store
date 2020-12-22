@@ -315,6 +315,21 @@
   margin-bottom: 20rpx;
   font-size: 30rpx;
   color: #0b0d1d;
+  display: flex;
+  align-items: center;
+}
+.number_box{
+  display: flex;
+  align-items: center;
+}
+.icon{
+  width: 38rpx;
+  height: 38rpx;
+}
+.number_input{
+  margin-left: 8rpx;
+  margin-right: 8rpx;
+  color: #333;
 }
 .buts{
   border-top: 1rpx solid #f6f6f6;

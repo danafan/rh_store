@@ -10,6 +10,7 @@
       <view class="star_list">
         <image class="hot_icon" src="../../images/hot_icon.png" wx:for="{{comment_info.star_num}}" wx:key="*this"></image>
       </view>
+      <view class="is_good">优质</view>
     </view>
     <view class="comment_info">{{comment_info.content}}</view>
     <view class="comment_imgs">
